@@ -1,290 +1,174 @@
 {
-  "dataset": {
-    "root": "/Users/nadiavilla/Desktop/FINAAAAAL/Backend/pretrainedResNet/synthetic_images",
-    "num_images": 67,
-    "classes": [
-      "crack",
-      "dataset_sample",
-      "heat",
-      "mixed_faults",
-      "no_fault",
-      "rust",
-      "wear"
-    ],
-    "train_counts": {
-      "crack": 9,
-      "dataset_sample": 1,
-      "heat": 9,
-      "mixed_faults": 9,
-      "no_fault": 9,
-      "rust": 9,
-      "wear": 9
-    },
-    "val_counts": {
-      "crack": 2,
-      "dataset_sample": 0,
-      "heat": 2,
-      "mixed_faults": 2,
-      "no_fault": 2,
-      "rust": 2,
-      "wear": 2
-    },
-    "val_fraction_target": 0.2
-  },
-  "training": {
-    "run_training": true,
-    "epochs": 8,
-    "batch_size": 8,
-    "lr": 0.0001,
-    "weight_decay": 0.0001,
-    "freeze_backbone": true,
-    "device": "cpu"
-  },
-  "metrics": {
-    "val": {
-      "accuracy": 0.5833,
-      "macro_f1": 0.55,
-      "weighted_f1": 0.55,
-      "per_class": {
-        "crack": {
-          "precision": 0.0,
-          "recall": 0.0,
-          "f1": 0.0,
-          "support": 2
-        },
-        "heat": {
-          "precision": 0.6667,
-          "recall": 1.0,
-          "f1": 0.8,
-          "support": 2
-        },
-        "mixed_faults": {
-          "precision": 0.5,
-          "recall": 0.5,
-          "f1": 0.5,
-          "support": 2
-        },
-        "no_fault": {
-          "precision": 1.0,
-          "recall": 1.0,
-          "f1": 1.0,
-          "support": 2
-        },
-        "rust": {
-          "precision": 0.0,
-          "recall": 0.0,
-          "f1": 0.0,
-          "support": 2
-        },
-        "wear": {
-          "precision": 1.0,
-          "recall": 1.0,
-          "f1": 1.0,
-          "support": 2
-        }
-      },
-      "present_classes": [
-        "crack",
-        "heat",
-        "mixed_faults",
-        "no_fault",
-        "rust",
-        "wear"
-      ],
-      "confusion_matrix": {
-        "labels": [
-          "crack",
-          "heat",
-          "mixed_faults",
-          "no_fault",
-          "rust",
-          "wear"
-        ],
-        "matrix": [
-          [
-            0,
-            1,
-            1,
-            0,
-            0,
-            0
-          ],
-          [
-            0,
-            2,
-            0,
-            0,
-            0,
-            0
-          ],
-          [
-            0,
-            0,
-            1,
-            0,
-            0,
-            0
-          ],
-          [
-            0,
-            0,
-            0,
-            2,
-            0,
-            0
-          ],
-          [
-            1,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          [
-            0,
-            0,
-            0,
-            0,
-            0,
-            2
-          ]
-        ]
-      }
-    },
+  "classes": [
+    "crack",
+    "dataset_sample",
+    "heat",
+    "mixed_faults",
+    "no_fault",
+    "rust",
+    "wear"
+  ],
+  "counts": {
     "train": {
-      "accuracy": 0.4,
-      "macro_f1": 0.3377,
-      "weighted_f1": 0.4085,
-      "per_class": {
-        "crack": {
-          "precision": 0.0,
-          "recall": 0.0,
-          "f1": 0.0,
-          "support": 8
-        },
-        "dataset_sample": {
-          "precision": 0.0,
-          "recall": 0.0,
-          "f1": 0.0,
-          "support": 8
-        },
-        "heat": {
-          "precision": 1.0,
-          "recall": 0.4615,
-          "f1": 0.6316,
-          "support": 13
-        },
-        "mixed_faults": {
-          "precision": 0.1053,
-          "recall": 1.0,
-          "f1": 0.1905,
-          "support": 2
-        },
-        "no_fault": {
-          "precision": 0.5833,
-          "recall": 0.7778,
-          "f1": 0.6667,
-          "support": 9
-        },
-        "rust": {
-          "precision": 0.0,
-          "recall": 0.0,
-          "f1": 0.0,
-          "support": 6
-        },
-        "wear": {
-          "precision": 1.0,
-          "recall": 0.7778,
-          "f1": 0.875,
-          "support": 9
-        }
-      },
-      "present_classes": [
-        "crack",
-        "dataset_sample",
-        "heat",
-        "mixed_faults",
-        "no_fault",
-        "rust",
-        "wear"
-      ],
-      "confusion_matrix": {
-        "labels": [
-          "crack",
-          "dataset_sample",
-          "heat",
-          "mixed_faults",
-          "no_fault",
-          "rust",
-          "wear"
-        ],
-        "matrix": [
-          [
-            0,
-            1,
-            0,
-            2,
-            5,
-            0,
-            0
-          ],
-          [
-            0,
-            0,
-            0,
-            8,
-            0,
-            0,
-            0
-          ],
-          [
-            0,
-            0,
-            6,
-            7,
-            0,
-            0,
-            0
-          ],
-          [
-            0,
-            0,
-            0,
-            2,
-            0,
-            0,
-            0
-          ],
-          [
-            0,
-            2,
-            0,
-            0,
-            7,
-            0,
-            0
-          ],
-          [
-            2,
-            4,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          [
-            0,
-            2,
-            0,
-            0,
-            0,
-            0,
-            7
-          ]
-        ]
-      }
+      "crack": 251,
+      "dataset_sample": 1,
+      "heat": 251,
+      "mixed_faults": 251,
+      "no_fault": 251,
+      "rust": 251,
+      "wear": 251
+    },
+    "val": {
+      "crack": 60,
+      "heat": 60,
+      "mixed_faults": 60,
+      "no_fault": 60,
+      "rust": 60,
+      "wear": 60
     }
-  }
+  },
+  "config": {
+    "epochs": 80,
+    "batch": 32,
+    "val_per_class": 60,
+    "seed": 23,
+    "head_warmup": 3,
+    "unfreeze_l4": 4,
+    "unfreeze_all": 12,
+    "lr_head": 0.001,
+    "lr_backbone": 3e-05,
+    "weight_decay": 5e-05,
+    "patience": 10,
+    "mixup": 0.3,
+    "cutmix": 0.15,
+    "mixup_final": 0.1,
+    "tta": 4,
+    "label_smoothing": 0.05,
+    "balanced_sampler": false
+  },
+  "val_metrics": {
+    "accuracy_percent": 99.72,
+    "macro_f1": 0.855,
+    "per_class": {
+      "crack": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 60
+      },
+      "dataset_sample": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      },
+      "heat": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 60
+      },
+      "mixed_faults": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 60
+      },
+      "no_fault": {
+        "precision": 1.0,
+        "recall": 0.983,
+        "f1": 0.992,
+        "support": 60
+      },
+      "rust": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 60
+      },
+      "wear": {
+        "precision": 0.984,
+        "recall": 1.0,
+        "f1": 0.992,
+        "support": 60
+      }
+    },
+    "missing_in_val": [
+      "dataset_sample"
+    ]
+  },
+  "confusion_matrix_labels": [
+    "crack",
+    "dataset_sample",
+    "heat",
+    "mixed_faults",
+    "no_fault",
+    "rust",
+    "wear"
+  ],
+  "confusion_matrix": [
+    [
+      60,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      60,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      60,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      59,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      60,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      60
+    ]
+  ]
 }

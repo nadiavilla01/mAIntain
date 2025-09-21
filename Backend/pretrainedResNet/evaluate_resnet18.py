@@ -1,335 +1,323 @@
-# fine_tune_resnet18.py
-import os, json, math, argparse, random
+import os, json, random, argparse
 import numpy as np
-from collections import Counter
-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from collections import defaultdict, Counter
 from torch.utils.data import DataLoader, Subset, WeightedRandomSampler
-from torchvision import models, transforms, datasets
-
-from sklearn.metrics import classification_report, confusion_matrix, accuracy_score, precision_recall_fscore_support
+from torchvision import datasets, transforms, models
+from sklearn.metrics import classification_report, confusion_matrix, f1_score
 import matplotlib.pyplot as plt
 
-# ----------------------------
-# Repro
-# ----------------------------
 def set_seed(seed=42):
     random.seed(seed); np.random.seed(seed)
     torch.manual_seed(seed); torch.cuda.manual_seed_all(seed)
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
 
-# ----------------------------
-# Tiny helpers
-# ----------------------------
-def stratified_per_class_split(targets, n_val_per_class=2):
-    """Return train_idx, val_idx selecting exactly n_val_per_class per class for validation
-       (if a class has <= n_val_per_class, keep at least 1 for train and 1 for val when possible)."""
-    targets = np.asarray(targets)
-    classes = np.unique(targets)
-    train_idx, val_idx = [], []
-    for c in classes:
-        idx = np.where(targets == c)[0]
-        np.random.shuffle(idx)
-        if len(idx) <= 2:
-            # edge case: keep 1/1 where possible
-            split = 1
-        else:
-            split = min(n_val_per_class, max(1, len(idx)//4))  # safety on super tiny classes
-        val_idx.extend(idx[:split].tolist())
-        train_idx.extend(idx[split:].tolist())
-    return np.array(train_idx), np.array(val_idx)
-
-def make_sampler(labels):
-    """Balanced sampler for training (helps a lot on tiny/imbalanced sets)."""
-    counts = Counter(labels)
-    class_weights = {c: 1.0 / counts[c] for c in counts}
-    sample_weights = np.array([class_weights[l] for l in labels], dtype=np.float32)
-    return WeightedRandomSampler(weights=sample_weights, num_samples=len(sample_weights), replacement=True)
-
-def mixup(x, y, alpha=0.4):
-    if alpha <= 0.0:
-        return x, y, None, 1.0
-    lam = np.random.beta(alpha, alpha)
-    batch_size = x.size(0)
-    index = torch.randperm(batch_size, device=x.device)
-    mixed_x = lam * x + (1 - lam) * x[index, :]
-    y_a, y_b = y, y[index]
-    return mixed_x, y_a, y_b, lam
-
-def plot_confusion_matrix(cm, class_names, out_png="resnet18_confusion_matrix.png"):
-    fig, ax = plt.subplots(figsize=(6, 5), dpi=160)
-    im = ax.imshow(cm, interpolation='nearest', cmap='Blues')
+def save_confmat(cm, labels, out_png):
+    fig, ax = plt.subplots(figsize=(8, 6), dpi=120)
+    im = ax.imshow(cm, interpolation='nearest', cmap=plt.cm.Blues)
     ax.figure.colorbar(im, ax=ax)
-    ax.set(xticks=np.arange(cm.shape[1]), yticks=np.arange(cm.shape[0]),
-           xticklabels=class_names, yticklabels=class_names,
-           ylabel='True label', xlabel='Predicted label', title='ResNet-18 Confusion Matrix')
+    ax.set(xticks=np.arange(len(labels)), yticks=np.arange(len(labels)),
+           xticklabels=labels, yticklabels=labels, ylabel='True', xlabel='Predicted',
+           title='Confusion Matrix')
     plt.setp(ax.get_xticklabels(), rotation=45, ha="right", rotation_mode="anchor")
-    thresh = cm.max() / 2.
-    for i in range(cm.shape[0]):
-        for j in range(cm.shape[1]):
-            ax.text(j, i, format(cm[i, j], 'd'),
-                    ha="center", va="center",
-                    color="white" if cm[i, j] > thresh else "black", fontsize=9)
-    fig.tight_layout()
-    plt.savefig(out_png, bbox_inches="tight")
-    plt.close(fig)
+    vmax = cm.max() if cm.size else 1
+    for i in range(len(labels)):
+        for j in range(len(labels)):
+            v = int(cm[i, j]) if cm.size else 0
+            ax.text(j, i, str(v), ha="center", va="center",
+                    color=("white" if v > vmax/2 else "black"))
+    fig.tight_layout(); fig.savefig(out_png, bbox_inches="tight"); plt.close(fig)
 
-# ----------------------------
-# Main
-# ----------------------------
+def per_class_split(base, val_per_class, seed):
+    per_class = defaultdict(list)
+    for idx, (_, y) in enumerate(base.samples):
+        per_class[y].append(idx)
+    rng = np.random.default_rng(seed)
+    train_idx, val_idx, train_counts, val_counts, warns = [], [], {}, {}, []
+    for c in range(len(base.classes)):
+        idxs = per_class[c]; rng.shuffle(idxs); n = len(idxs)
+        if n <= 1:
+            warns.append(f"(warning) class id {c} has only {n} image; placing it in TRAIN only.")
+            n_val = 0
+        else:
+            n_val = min(val_per_class, n - 1)
+        val_sp = idxs[:n_val]; tr_sp = idxs[n_val:]
+        val_idx.extend(val_sp); train_idx.extend(tr_sp)
+        train_counts[base.classes[c]] = len(tr_sp)
+        val_counts[base.classes[c]] = len(val_sp)
+    return train_idx, val_idx, train_counts, val_counts, warns
+
+def mixup(x, y, alpha):
+    if alpha <= 0.0: return x, y, y, 1.0
+    lam = np.random.beta(alpha, alpha)
+    idx = torch.randperm(x.size(0), device=x.device)
+    return lam*x + (1-lam)*x[idx], y, y[idx], float(lam)
+
+def rand_bbox(W, H, lam):
+    cut_rat = np.sqrt(1.0 - lam)
+    cut_w = int(W * cut_rat)
+    cut_h = int(H * cut_rat)
+    cx = np.random.randint(W); cy = np.random.randint(H)
+    x1 = np.clip(cx - cut_w // 2, 0, W); x2 = np.clip(cx + cut_w // 2, 0, W)
+    y1 = np.clip(cy - cut_h // 2, 0, H); y2 = np.clip(cy + cut_h // 2, 0, H)
+    return x1, y1, x2, y2
+
+def cutmix(x, y, alpha):
+    if alpha <= 0.0: return x, y, y, 1.0
+    lam = np.random.beta(alpha, alpha)
+    idx = torch.randperm(x.size(0), device=x.device)
+    x1, y1, x2, y2 = rand_bbox(x.size(3), x.size(2), lam)
+    x_m = x.clone()
+    x_m[:, :, y1:y2, x1:x2] = x[idx, :, y1:y2, x1:x2]
+    box_area = (x2-x1)*(y2-y1)
+    lam_adj = 1.0 - box_area/(x.size(2)*x.size(3))
+    return x_m, y, y[idx], float(lam_adj)
+
+def mixup_cutmix(x, y, mixup_alpha, cutmix_alpha, p_cutmix=0.5):
+    if cutmix_alpha > 0.0 and np.random.rand() < p_cutmix:
+        return cutmix(x, y, cutmix_alpha)
+    return mixup(x, y, mixup_alpha)
+
+def cross_entropy_ls(logits, targets, ls=0.0):
+    return F.cross_entropy(logits, targets, label_smoothing=float(ls))
+
+def eval_model(model, loader, device, tta):
+    model.eval()
+    y_true, y_pred = [], []
+    with torch.no_grad():
+        for x, y in loader:
+            x = x.to(device)
+            logits = model(x)
+            if tta and tta > 0:
+                acc = logits
+                for _ in range(tta):
+                    acc = acc + model(torch.flip(x, dims=[3]))
+                logits = acc / (1 + tta)
+            y_true.extend(y.numpy())
+            y_pred.extend(torch.argmax(logits, 1).cpu().numpy())
+    return np.array(y_true), np.array(y_pred)
+
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--data", type=str, default="./synthetic_images")
-    parser.add_argument("--epochs", type=int, default=40)
-    parser.add_argument("--batch", type=int, default=8)
-    parser.add_argument("--val_per_class", type=int, default=2, help="how many images per class to hold out")
-    parser.add_argument("--mixup", type=float, default=0.3, help="alpha; 0 disables")
-    parser.add_argument("--lr_backbone", type=float, default=1e-4)
-    parser.add_argument("--lr_head", type=float, default=5e-4)
-    parser.add_argument("--weight_decay", type=float, default=1e-4)
-    parser.add_argument("--patience", type=int, default=8)
-    parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--out_model", type=str, default="fault_classifier_resnet18.pth")
-    parser.add_argument("--out_json", type=str, default="resnet18_eval_metrics.json")
-    parser.add_argument("--out_cm_png", type=str, default="resnet18_confusion_matrix.png")
-    args = parser.parse_args()
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--data", type=str, default="./synthetic_images")
+    ap.add_argument("--epochs", type=int, default=80)
+    ap.add_argument("--batch", type=int, default=32)
+    ap.add_argument("--val_per_class", type=int, default=60)
+    ap.add_argument("--head_warmup", type=int, default=3)
+    ap.add_argument("--unfreeze_l4", type=int, default=4)
+    ap.add_argument("--unfreeze_all", type=int, default=12)
+    ap.add_argument("--lr_head", type=float, default=1e-3)
+    ap.add_argument("--lr_backbone", type=float, default=3e-5)
+    ap.add_argument("--weight_decay", type=float, default=5e-5)
+    ap.add_argument("--patience", type=int, default=10)
+    ap.add_argument("--mixup", type=float, default=0.30)
+    ap.add_argument("--cutmix", type=float, default=0.15)
+    ap.add_argument("--mixup_final", type=float, default=0.10)
+    ap.add_argument("--tta", type=int, default=4)
+    ap.add_argument("--label_smoothing", type=float, default=0.05)
+    ap.add_argument("--seed", type=int, default=23)
+    ap.add_argument("--balanced_sampler", action="store_true")
+    ap.add_argument("--model_out", type=str, default="fault_classifier_resnet18.pth")
+    ap.add_argument("--metrics_out_json", type=str, default="resnet18_eval_metrics.json")
+    ap.add_argument("--confmat_png", type=str, default="resnet18_confusion_matrix.png")
+    args = ap.parse_args()
 
     set_seed(args.seed)
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    device = torch.device("cuda" if torch.cuda.is_available()
+                          else ("mps" if torch.backends.mps.is_available() else "cpu"))
 
-    # --- Transforms ---
-    train_tf = transforms.Compose([
+    base_no_tf = datasets.ImageFolder(args.data)
+    classes = base_no_tf.classes
+    print(f"📁 Loading dataset from {args.data}")
+    print(f"  found {len(base_no_tf)} images across {len(classes)} classes: {classes}")
+
+    train_idx, val_idx, train_counts, val_counts, warns = per_class_split(base_no_tf, args.val_per_class, args.seed)
+    for w in warns: print(w)
+    print("  TRAIN counts → " + ", ".join([f"{k}:{v}" for k,v in train_counts.items()]))
+    print("  VAL counts → " + ", ".join([f"{k}:{v}" for k,v in val_counts.items()]))
+
+    train_tfms = transforms.Compose([
         transforms.RandomResizedCrop(224, scale=(0.6, 1.0)),
         transforms.RandomHorizontalFlip(p=0.5),
-        transforms.RandomRotation(degrees=10),
-        transforms.ColorJitter(brightness=0.2, contrast=0.15, saturation=0.15, hue=0.02),
-        transforms.RandomApply([transforms.GaussianBlur(kernel_size=3)], p=0.2),
+        transforms.RandomApply([transforms.ColorJitter(0.25,0.25,0.25,0.1)], p=0.35),
+        transforms.RandomApply([transforms.RandomPerspective(distortion_scale=0.25)], p=0.15),
+        transforms.RandomApply([transforms.GaussianBlur(3)], p=0.15),
         transforms.ToTensor(),
-        transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                             std=[0.229, 0.224, 0.225]),
+        transforms.RandomErasing(p=0.20, scale=(0.02,0.12), ratio=(0.3,3.3)),
+        transforms.Normalize([0.485,0.456,0.406],[0.229,0.224,0.225]),
     ])
-    val_tf = transforms.Compose([
-        transforms.Resize((224, 224)),
+    val_tfms = transforms.Compose([
+        transforms.Resize(256),
+        transforms.CenterCrop(224),
         transforms.ToTensor(),
-        transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                             std=[0.229, 0.224, 0.225]),
+        transforms.Normalize([0.485,0.456,0.406],[0.229,0.224,0.225]),
     ])
 
-    # --- Dataset & split ---
-    full = datasets.ImageFolder(args.data, transform=None)
-    print(f"📁 Loading dataset from {args.data}")
-    print(f"  found {len(full)} images across {len(full.classes)} classes: {full.classes}")
+    train_base = datasets.ImageFolder(args.data, transform=train_tfms)
+    val_base   = datasets.ImageFolder(args.data, transform=val_tfms)
+    train_ds = Subset(train_base, train_idx)
+    val_ds   = Subset(val_base, val_idx)
 
-    # make a deterministic stratified split per class
-    np.random.seed(args.seed)
-    all_targets = [t for _, t in full.samples]
-    train_idx, val_idx = stratified_per_class_split(all_targets, n_val_per_class=args.val_per_class)
+    if args.balanced_sampler:
+        y_tr = [train_base.samples[i][1] for i in train_idx]
+        freq = Counter(y_tr)
+        w = {c: 1.0/f for c, f in freq.items()}
+        weights = [w[y] for y in y_tr]
+        sampler = WeightedRandomSampler(weights, num_samples=len(weights), replacement=True)
+        shuffle = False
+    else:
+        sampler = None
+        shuffle = True
 
-    # attach transforms per split
-    full_train = datasets.ImageFolder(args.data, transform=train_tf)
-    full_val   = datasets.ImageFolder(args.data, transform=val_tf)
+    pin = bool(torch.cuda.is_available())
+    train_loader = DataLoader(train_ds, batch_size=args.batch, shuffle=shuffle, sampler=sampler,
+                              num_workers=0, pin_memory=pin, drop_last=False)
+    val_loader   = DataLoader(val_ds,   batch_size=args.batch, shuffle=False,
+                              num_workers=0, pin_memory=pin, drop_last=False)
 
-    ds_train = Subset(full_train, train_idx)
-    ds_val   = Subset(full_val,   val_idx)
-
-    # class balance for sampler
-    train_targets = [full.samples[i][1] for i in train_idx]
-    sampler = make_sampler(train_targets)
-
-    train_loader = DataLoader(ds_train, batch_size=args.batch, sampler=sampler, num_workers=2, pin_memory=True)
-    val_loader   = DataLoader(ds_val,   batch_size=args.batch, shuffle=False,   num_workers=2, pin_memory=True)
-
-    print("🔎 Split summary (class : train/val):")
-    counts_train = Counter(train_targets)
-    counts_val   = Counter([full.samples[i][1] for i in val_idx])
-    for c, name in enumerate(full.classes):
-        print(f"  {name:12s}: {counts_train.get(c,0):>2d} / {counts_val.get(c,0):>2d}")
-
-    # --- Model ---
     model = models.resnet18(weights=models.ResNet18_Weights.DEFAULT)
-    in_f = model.fc.in_features
-    model.fc = nn.Sequential(
-        nn.Dropout(p=0.2),
-        nn.Linear(in_f, len(full.classes))
-    )
+    model.fc = nn.Linear(model.fc.in_features, len(classes))
     model = model.to(device)
 
-    # 2-stage fine-tuning: freeze backbone first, then unfreeze all
-    for p in model.parameters():
-        p.requires_grad = True
-    for p in model.layer1.parameters(): p.requires_grad = False
-    for p in model.layer2.parameters(): p.requires_grad = False
-    for p in model.layer3.parameters(): p.requires_grad = False
-    # layer4 + fc trainable first, then unfreeze everything later
+    params_backbone = [p for n,p in model.named_parameters() if not n.startswith("fc.")]
+    params_layer4 = list(model.layer4.parameters())
+    params_head = list(model.fc.parameters())
 
-    # discriminative LRs
-    params = [
-        {"params": model.layer4.parameters(), "lr": args.lr_backbone},
-        {"params": model.fc.parameters(),     "lr": args.lr_head}
-    ]
-    optim = torch.optim.AdamW(params, weight_decay=args.weight_decay)
-    sched = torch.optim.lr_scheduler.CosineAnnealingLR(optim, T_max=args.epochs, eta_min=args.lr_backbone*0.1)
+    for p in params_backbone: p.requires_grad = False
+    opt = torch.optim.AdamW(params_head, lr=args.lr_head, weight_decay=args.weight_decay)
 
-    # label smoothing helps on tiny sets
-    criterion = nn.CrossEntropyLoss(label_smoothing=0.1)
+    best_state, best_macro_f1, bad = None, -1.0, 0
 
-    best_val = math.inf
-    best_state = None
-    bad = 0
-
-    def evaluate():
-        model.eval()
-        y_true, y_pred = [], []
-        val_loss = 0.0
-        with torch.no_grad():
-            for xb, yb in val_loader:
-                xb, yb = xb.to(device), yb.to(device)
-                out = model(xb)
-                val_loss += criterion(out, yb).item() * xb.size(0)
-                y_true.extend(yb.cpu().numpy().tolist())
-                y_pred.extend(out.argmax(1).cpu().numpy().tolist())
-        val_loss /= max(1, len(ds_val))
-        return val_loss, np.array(y_true), np.array(y_pred)
-
-    # --- Train ---
-    E_UNFREEZE = max(2, args.epochs // 4)  # unfreeze after first quarter
-    print("\n🚀 Training...")
-    for epoch in range(1, args.epochs + 1):
-        if epoch == E_UNFREEZE:
-            for p in model.parameters(): p.requires_grad = True
-            # reset optimizer with two groups (smaller LR for earlier layers)
-            params = [
-                {"params": model.layer1.parameters(), "lr": args.lr_backbone * 0.5},
-                {"params": model.layer2.parameters(), "lr": args.lr_backbone * 0.75},
-                {"params": model.layer3.parameters(), "lr": args.lr_backbone},
-                {"params": model.layer4.parameters(), "lr": args.lr_backbone},
-                {"params": model.fc.parameters(),     "lr": args.lr_head}
-            ]
-            optim = torch.optim.AdamW(params, weight_decay=args.weight_decay)
-            sched = torch.optim.lr_scheduler.CosineAnnealingLR(optim, T_max=args.epochs - epoch + 1,
-                                                               eta_min=args.lr_backbone*0.1)
-            print("🔓 Unfroze backbone for full fine-tuning.")
+    print("\n🧪 Training...")
+    for epoch in range(1, args.epochs+1):
+        if epoch == args.unfreeze_l4:
+            print("🔓 Unfreezing layer4…")
+            for p in params_layer4: p.requires_grad = True
+            opt = torch.optim.AdamW(
+                [{"params": params_layer4, "lr": args.lr_backbone},
+                 {"params": params_head,   "lr": args.lr_head}],
+                weight_decay=args.weight_decay
+            )
+        if epoch == args.unfreeze_all:
+            print("🔓 Unfreezing entire backbone…")
+            for p in params_backbone: p.requires_grad = True
+            opt = torch.optim.AdamW(
+                [{"params": params_backbone, "lr": args.lr_backbone},
+                 {"params": params_head,     "lr": args.lr_head}],
+                weight_decay=args.weight_decay
+            )
 
         model.train()
-        run_loss, right, seen = 0.0, 0, 0
-        for xb, yb in train_loader:
-            xb, yb = xb.to(device), yb.to(device)
+        total, correct, loss_sum = 0, 0, 0.0
+        if args.epochs > 1:
+            mixup_alpha = args.mixup + (args.mixup_final - args.mixup) * ((epoch - 1)/(args.epochs - 1))
+        else:
+            mixup_alpha = args.mixup
 
-            # MixUp (optional)
-            if args.mixup > 0:
-                xb, y_a, y_b, lam = mixup(xb, yb, alpha=args.mixup)
-                out = model(xb)
-                loss = lam * criterion(out, y_a) + (1 - lam) * criterion(out, y_b)
-                preds = out.argmax(1)
-                # Use y_a for quick accuracy proxy
-                right += (preds == y_a).sum().item()
-            else:
-                out = model(xb)
-                loss = criterion(out, yb)
-                preds = out.argmax(1)
-                right += (preds == yb).sum().item()
-
-            optim.zero_grad(set_to_none=True)
+        for x, y in train_loader:
+            x, y = x.to(device), y.to(device)
+            x_m, y_a, y_b, lam = mixup_cutmix(x, y, mixup_alpha, args.cutmix, p_cutmix=0.5)
+            opt.zero_grad(set_to_none=True)
+            logits = model(x_m)
+            loss_a = cross_entropy_ls(logits, y_a, ls=args.label_smoothing)
+            loss_b = cross_entropy_ls(logits, y_b, ls=args.label_smoothing)
+            loss = lam * loss_a + (1 - lam) * loss_b
             loss.backward()
             nn.utils.clip_grad_norm_(model.parameters(), 1.0)
-            optim.step()
-            run_loss += loss.item() * xb.size(0)
-            seen += xb.size(0)
+            opt.step()
+            loss_sum += loss.item() * x.size(0)
+            pred = logits.argmax(1)
+            correct += (pred == y).sum().item()
+            total += x.size(0)
 
-        sched.step()
-        tr_loss = run_loss / max(1, seen)
-        tr_acc  = 100.0 * right / max(1, seen)
+        train_loss = loss_sum / max(1,total)
+        train_acc = 100.0 * correct / max(1,total)
 
-        val_loss, y_true, y_pred = evaluate()
-        val_acc = 100.0 * accuracy_score(y_true, y_pred)
+        y_true, y_pred = eval_model(model, val_loader, device, args.tta)
+        val_acc = 100.0 * float((y_true == y_pred).mean()) if len(y_true) else 0.0
+        macro_f1 = float(f1_score(y_true, y_pred, labels=list(range(len(classes))),
+                                  average="macro", zero_division=0)) if len(y_true) else 0.0
 
-        print(f"Epoch {epoch:02d}/{args.epochs} | train loss {tr_loss:.4f} acc {tr_acc:5.1f}% | "
-              f"val loss {val_loss:.4f} acc {val_acc:5.1f}%")
+        print(f"Epoch {epoch:02d}/{args.epochs} | train loss {train_loss:.4f} | train acc {train_acc:4.1f}% | val acc {val_acc:4.1f}% | macro-F1 {macro_f1:.3f}")
 
-        if val_loss + 1e-5 < best_val:
-            best_val = val_loss
-            best_state = {k: v.cpu() for k, v in model.state_dict().items()}
+        improve = macro_f1 > best_macro_f1 + 1e-4
+        if improve:
+            best_macro_f1 = macro_f1
+            best_state = {k: v.detach().cpu() for k,v in model.state_dict().items()}
             bad = 0
         else:
             bad += 1
-            if bad >= args.patience:
+            if bad >= args.patience and epoch >= args.head_warmup:
                 print("⏹ Early stopping.")
                 break
 
     if best_state is not None:
         model.load_state_dict(best_state)
 
-    # --- Final eval on VAL ---
-    model.eval()
-    y_true, y_pred = [], []
-    with torch.no_grad():
-        for xb, yb in val_loader:
-            xb, yb = xb.to(device), yb.to(device)
-            out = model(xb)
-            y_true.extend(yb.cpu().numpy().tolist())
-            y_pred.extend(out.argmax(1).cpu().numpy().tolist())
-    y_true = np.array(y_true); y_pred = np.array(y_pred)
+    torch.save(model.state_dict(), args.model_out)
+    print(f"\n💾 Model saved to {args.model_out}")
 
-    cls_names = full.classes
-    report = classification_report(y_true, y_pred, target_names=cls_names, output_dict=True, zero_division=0)
-    cm = confusion_matrix(y_true, y_pred)
+    y_true, y_pred = eval_model(model, val_loader, device, args.tta)
+    labels_idx = list(range(len(classes)))
+    report = classification_report(y_true, y_pred, labels=labels_idx,
+                                   target_names=classes, digits=3,
+                                   zero_division=0, output_dict=True)
+    cm = confusion_matrix(y_true, y_pred, labels=labels_idx)
+    try:
+        save_confmat(cm, classes, args.confmat_png)
+        print(f"🖼️ Confusion matrix → {args.confmat_png}")
+    except Exception as e:
+        print(f"(warning) Could not save confusion matrix image: {e}")
 
-    # save artifacts
-    torch.save(model.state_dict(), args.out_model)
-    print(f"\n💾 Model saved to {args.out_model}")
+    per_class = {}
+    missing = []
+    for i, name in enumerate(classes):
+        r = report.get(name, {"precision":0.0, "recall":0.0, "f1-score":0.0, "support":0})
+        sup = int(r.get("support", 0))
+        if sup == 0: missing.append(name)
+        per_class[name] = {
+            "precision": round(float(r.get("precision", 0.0)), 3),
+            "recall": round(float(r.get("recall", 0.0)), 3),
+            "f1": round(float(r.get("f1-score", 0.0)), 3),
+            "support": sup
+        }
 
-    plot_confusion_matrix(cm, cls_names, out_png=args.out_cm_png)
-    print(f"🖼️ Confusion matrix → {args.out_cm_png}")
-
-    # flatten metrics for JSON
-    macro_p, macro_r, macro_f1, _ = precision_recall_fscore_support(y_true, y_pred, average='macro', zero_division=0)
-    micro_p, micro_r, micro_f1, _ = precision_recall_fscore_support(y_true, y_pred, average='micro', zero_division=0)
+    train_counts_named = {classes[k]: v for k,v in Counter([train_base.samples[i][1] for i in train_idx]).items()}
+    val_counts_named   = {classes[k]: v for k,v in Counter([val_base.samples[i][1] for i in val_idx]).items()}
 
     out = {
-        "num_images": len(full),
-        "classes": cls_names,
-        "split_counts": {
-            "train": len(ds_train),
-            "val": len(ds_val),
-            "per_class_train": {cls_names[c]: int(counts_train.get(c, 0)) for c in range(len(cls_names))},
-            "per_class_val":   {cls_names[c]: int(counts_val.get(c, 0))   for c in range(len(cls_names))},
-        },
-        "metrics": {
-            "val_accuracy": round(accuracy_score(y_true, y_pred) * 100, 2),
-            "macro_precision": round(macro_p * 100, 2),
-            "macro_recall": round(macro_r * 100, 2),
-            "macro_f1": round(macro_f1 * 100, 2),
-            "micro_precision": round(micro_p * 100, 2),
-            "micro_recall": round(micro_r * 100, 2),
-            "micro_f1": round(micro_f1 * 100, 2),
-        },
-        "per_class": {
-            cls: {
-                "precision": round(report[cls]["precision"] * 100, 2),
-                "recall":    round(report[cls]["recall"] * 100, 2),
-                "f1":        round(report[cls]["f1-score"] * 100, 2),
-                "support":   int(report[cls]["support"])
-            } for cls in cls_names
-        },
-        "confusion_matrix": cm.tolist(),
+        "classes": classes,
+        "counts": {"train": train_counts_named, "val": val_counts_named},
         "config": {
-            "epochs": args.epochs,
-            "batch": args.batch,
-            "val_per_class": args.val_per_class,
-            "mixup_alpha": args.mixup,
-            "lr_backbone": args.lr_backbone,
-            "lr_head": args.lr_head,
-            "weight_decay": args.weight_decay,
-            "patience": args.patience,
-            "seed": args.seed
-        }
+            "epochs": args.epochs, "batch": args.batch, "val_per_class": args.val_per_class,
+            "seed": args.seed, "head_warmup": args.head_warmup,
+            "unfreeze_l4": args.unfreeze_l4, "unfreeze_all": args.unfreeze_all,
+            "lr_head": args.lr_head, "lr_backbone": args.lr_backbone,
+            "weight_decay": args.weight_decay, "patience": args.patience,
+            "mixup": args.mixup, "cutmix": args.cutmix, "mixup_final": args.mixup_final,
+            "tta": args.tta, "label_smoothing": args.label_smoothing,
+            "balanced_sampler": bool(args.balanced_sampler)
+        },
+        "val_metrics": {
+            "accuracy_percent": round(float((y_true == y_pred).mean()*100.0), 2) if len(y_true) else None,
+            "macro_f1": round(float(f1_score(y_true, y_pred, labels=labels_idx,
+                                             average="macro", zero_division=0)), 3) if len(y_true) else None,
+            "per_class": per_class,
+            "missing_in_val": missing
+        },
+        "confusion_matrix_labels": classes,
+        "confusion_matrix": cm.tolist()
     }
-    with open(args.out_json, "w") as f:
+    with open(args.metrics_out_json, "w") as f:
         json.dump(out, f, indent=2)
-    print(f"📊 Metrics → {args.out_json}")
+    print(f"📊 Metrics → {args.metrics_out_json}")
+
+    print("\nClassification Report (VAL):")
+    print(classification_report(y_true, y_pred, labels=labels_idx,
+                                target_names=classes, digits=3, zero_division=0))
 
 if __name__ == "__main__":
     main()
