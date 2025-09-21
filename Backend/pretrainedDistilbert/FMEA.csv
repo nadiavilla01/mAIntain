@@ -1,0 +1,13 @@
+intent,failure_mode,cause,suggested_action
+intent_sensor_drift,Sensor drift over time,Gradual degradation due to aging,Schedule periodic recalibration or replace sensor
+intent_sensor_drift,Temperature misreadings,Exposure to thermal shock,Verify sensor insulation and recalibrate
+intent_wrong_scaling,Incorrect data normalization,Mismatch between training and live preprocessing,Check preprocessing pipeline for scaling consistency
+intent_wrong_scaling,Feature mismatch,Feature order or range changed,Sync feature schema between training and production
+intent_model_outdated,Model performance decay,Model trained on outdated dataset,Retrain model on most recent operating data
+intent_model_outdated,Inaccurate predictions on new scenarios,Unseen failure modes in training,Retrain using expanded dataset covering edge cases
+intent_overestimate_rul,Excessive RUL prediction,Overfitting to slow-degrading examples,Introduce stricter validation and increase dataset variety
+intent_overestimate_rul,Missed early signs of failure,Lack of short-lifespan examples in training,Rebalance dataset to include fast-failure samples
+intent_wrong_intent,Ambiguous sensor anomaly,Overlapping sensor behaviors,Enhance model with domain-specific disambiguation features
+intent_wrong_intent,Unlabeled failure pattern,Label not represented in training dataset,Tag and relabel new data to cover this failure class
+intent_uncertain,Low prediction confidence,Data outside training distribution,Flag for manual review and retraining
+intent_uncertain,Conflicting sensor signals,Possible sensor noise or multicollinearity,Perform signal filtering and principal component check

@@ -1,0 +1,729 @@
+timestamp,text,predicted_intent,confidence,fallback
+2025-09-17T21:05:16.512553,what is happening??,intent_uncertain,0.5688285827636719,yes
+2025-09-17T21:05:35.630537,"the sensor is giving problems, again",intent_sensor_drift,0.9950409531593323,no
+2025-09-17T19:12:19.977517,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:12:20.004111,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:12:20.036183,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:12:20.077662,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:12:20.125870,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:12:20.163907,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:12:20.272419,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:12:20.408520,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:12:20.458512,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:12:20.502903,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:12:20.556730,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:12:20.602179,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:12:20.636097,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:12:20.664444,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:12:20.693001,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:12:20.725088,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:12:20.749335,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:12:20.775486,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:13:19.858520,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:13:19.887719,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:13:19.915450,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:13:19.963776,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:13:20.013354,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:13:20.078417,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:13:20.143059,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:13:20.181790,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:13:20.214878,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:13:20.253494,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:13:20.291268,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:13:20.352182,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:13:20.392261,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:13:20.423024,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:13:20.458523,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:13:20.500394,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:13:20.526357,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:13:20.555836,⚠️ Unusual speed,intent_uncertain,0.385
+2025-09-17T19:14:20.073674,⚠️ Unusual speed,intent_uncertain,0.38546842336654663,yes
+2025-09-17T19:17:20.003287,⚠️ Unusual speed,intent_uncertain,0.38546842336654663,yes
+2025-09-17T19:23:51.669453,⚠️ High vibration,intent_sensor_drift,0.7888739705085754,no
+2025-09-17T19:45:05.245555,⚠️ Unusual speed,intent_uncertain,0.38546842336654663,yes
+2025-09-17T19:52:03.622701,⚠️ Unusual speed,intent_uncertain,0.38546842336654663,yes
+2025-09-17T20:24:34.771167,⚠️ Unusual speed,intent_uncertain,0.38546842336654663,yes
+2025-09-17T20:33:02.565825,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-17T20:33:02.681872,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-17T20:33:02.877193,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-17T20:33:03.211105,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-17T22:03:34.883675,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-17T22:03:34.937449,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-17T22:03:35.055117,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-17T22:03:35.213850,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-17T22:05:10.757013,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-17T22:05:10.833615,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-17T22:05:10.975044,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-17T22:05:11.296660,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-17T22:11:02.308683,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-17T22:11:02.361695,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-17T22:11:02.398149,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-17T22:11:02.503223,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-17T22:15:02.574714,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-17T22:15:02.644048,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-17T22:15:02.733855,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-17T22:15:02.972865,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-17T22:17:42.012894,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-17T22:17:42.065787,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-17T22:17:42.095491,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-17T22:17:42.225375,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-17T22:20:40.902711,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-17T22:20:40.945922,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-17T22:20:41.009137,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-17T22:20:41.409096,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-17T22:30:06.664217,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-17T22:30:06.710257,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-17T22:30:06.785603,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-17T22:30:06.956666,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-18T09:31:03.202893,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-18T09:31:03.292505,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-18T09:31:03.340338,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-18T09:31:03.468170,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-18T11:38:51.151280,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-18T11:38:51.208757,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-18T11:38:51.266051,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-18T11:38:51.436076,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-18T11:39:58.754862,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-18T11:39:58.824014,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-18T11:39:58.973016,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-18T11:39:59.205050,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-18T12:46:24.934527,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-18T12:46:24.973137,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-18T12:46:25.009777,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-18T12:46:25.214947,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-18T12:49:01.256420,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-18T12:49:01.287534,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-18T12:49:01.323048,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-18T12:49:01.424934,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-18T12:55:08.313121,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-18T12:55:08.358008,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-18T12:55:08.409143,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-18T12:55:08.559101,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-18T12:57:26.841140,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-18T12:57:26.912440,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-18T12:57:27.033967,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-18T12:57:27.290960,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-18T13:04:53.110338,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-18T13:04:53.164368,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-18T13:04:53.203176,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-18T13:04:53.339401,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-18T13:55:35.248178,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-18T13:55:35.309818,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-18T13:55:35.428560,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-18T13:55:35.658960,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-18T13:56:48.350019,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-18T13:56:48.389879,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-18T13:56:48.428057,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-18T13:56:48.553739,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-18T16:43:59.009961,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-18T16:43:59.157049,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-18T16:43:59.529444,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-18T16:43:59.838893,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-18T20:33:25.495908,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-18T20:33:25.530843,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-18T20:33:25.572448,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-18T20:33:25.681982,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-18T21:00:25.819227,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-18T21:00:25.881133,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-18T21:00:26.179562,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-18T21:00:26.372101,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-18T21:05:40.336490,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-18T21:05:40.498790,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-18T21:05:40.806320,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-18T21:05:41.274744,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-18T21:06:25.716296,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-18T21:06:25.791461,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-18T21:06:25.893810,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-18T21:06:26.103935,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-18T21:14:33.775945,What’s the likely root cause?,intent_overestimate_rul,0.8443690538406372,no
+2025-09-18T21:14:52.886002,Which sensor is most suspicious?,intent_sensor_drift,0.994922935962677,no
+2025-09-18T21:20:37.547461,Why was this alert raised?,intent_uncertain,0.5247332453727722,yes
+2025-09-18T21:20:37.939752,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-18T21:20:38.083445,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-18T21:20:38.269948,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-18T21:20:38.596542,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-18T21:20:53.657117,What should I do first?,intent_uncertain,0.7498611211776733,yes
+2025-09-18T21:21:25.393230,Which sensor is most suspicious?,intent_sensor_drift,0.994922935962677,no
+2025-09-19T10:32:12.587062,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-19T10:32:12.619938,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-19T10:32:12.659240,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-19T10:32:12.781288,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-19T10:35:51.597573,Which sensor is most suspicious?,intent_sensor_drift,0.994922935962677,no
+2025-09-19T10:36:00.914211,What should I do first?,intent_uncertain,0.7498611211776733,yes
+2025-09-20T09:18:09.047096,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-20T09:18:09.082242,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-20T09:18:09.119486,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-20T09:18:09.227935,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-20T09:24:06.395813,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-20T09:24:06.439804,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-20T09:24:06.476238,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-20T09:24:06.588690,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-20T09:31:26.725966,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-20T09:31:26.755733,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-20T09:31:26.788112,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-20T09:31:26.868309,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-20T09:32:12.165508,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-20T09:32:12.216617,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-20T09:32:12.277107,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-20T09:32:12.448011,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-20T10:10:58.927274,⚠️ Temperature anomaly detected at cycle 31,intent_uncertain,0.5030806064605713,yes
+2025-09-20T10:10:59.025154,RUL divergence: model vs baseline differs by ~61h at cycle 31 · strongest sensor shift: s_14 (~1.7σ),intent_sensor_drift,0.9933063387870789,no
+2025-09-20T10:10:59.181042,⚠️ Power anomaly detected at cycle 31,intent_wrong_scaling,0.7668352723121643,no
+2025-09-20T10:10:59.305075,RUL divergence: model vs baseline differs by ~159h at cycle 31 · strongest sensor shift: s_15 (~1.9σ),intent_sensor_drift,0.9931489825248718,no
+2025-09-20T10:10:59.388121,RUL divergence: model vs baseline differs by ~56h at cycle 31 · strongest sensor shift: s_7 (~2.0σ),intent_sensor_drift,0.9932628273963928,no
+2025-09-20T10:10:59.472637,RUL divergence: model vs baseline differs by ~97h at cycle 31 · strongest sensor shift: s_3 (~1.5σ),intent_sensor_drift,0.9933028221130371,no
+2025-09-20T10:10:59.554548,RUL divergence: model vs baseline differs by ~145h at cycle 31 · strongest sensor shift: s_21 (~1.8σ),intent_sensor_drift,0.9932770133018494,no
+2025-09-20T10:10:59.633840,⚠️ Vibration anomaly detected at cycle 31,intent_uncertain,0.6210988163948059,yes
+2025-09-20T10:10:59.729964,RUL divergence: model vs baseline differs by ~54h at cycle 31 · strongest sensor shift: s_4 (~1.9σ),intent_sensor_drift,0.9933609962463379,no
+2025-09-20T10:10:59.811356,RUL divergence: model vs baseline differs by ~134h at cycle 31 · strongest sensor shift: s_8 (~1.4σ),intent_sensor_drift,0.9934005737304688,no
+2025-09-20T10:10:59.899963,RUL divergence: model vs baseline differs by ~41h at cycle 31 · strongest sensor shift: s_15 (~2.3σ),intent_sensor_drift,0.9934448003768921,no
+2025-09-20T10:10:59.998304,RUL divergence: model vs baseline differs by ~78h at cycle 31 · strongest sensor shift: s_15 (~1.9σ),intent_sensor_drift,0.9933016300201416,no
+2025-09-20T10:11:00.210187,RUL divergence: model vs baseline differs by ~99h at cycle 31 · strongest sensor shift: s_21 (~1.5σ),intent_sensor_drift,0.9932647943496704,no
+2025-09-20T10:11:00.294235,RUL divergence: model vs baseline differs by ~116h at cycle 31 · strongest sensor shift: s_3 (~2.1σ),intent_sensor_drift,0.993327260017395,no
+2025-09-20T10:11:00.486651,⚠️ Speed anomaly detected at cycle 31,intent_wrong_scaling,0.8108221888542175,no
+2025-09-20T10:11:00.620938,RUL divergence: model vs baseline differs by ~86h at cycle 31 · strongest sensor shift: s_13 (~1.3σ),intent_sensor_drift,0.9933083057403564,no
+2025-09-20T10:11:00.865730,RUL divergence: model vs baseline differs by ~63h at cycle 31 · strongest sensor shift: s_8 (~1.4σ),intent_sensor_drift,0.9933314919471741,no
+2025-09-20T10:11:01.051168,RUL divergence: model vs baseline differs by ~65h at cycle 31 · strongest sensor shift: s_4 (~2.5σ),intent_sensor_drift,0.9933313727378845,no
+2025-09-20T10:11:01.259860,RUL divergence: model vs baseline differs by ~72h at cycle 31 · strongest sensor shift: s_11 (~2.0σ),intent_sensor_drift,0.9931040406227112,no
+2025-09-20T10:11:01.423565,RUL divergence: model vs baseline differs by ~99h at cycle 31 · strongest sensor shift: s_4 (~2.0σ),intent_sensor_drift,0.993021547794342,no
+2025-09-20T10:11:01.785738,RUL divergence: model vs baseline differs by ~167h at cycle 31 · strongest sensor shift: s_9 (~1.9σ),intent_sensor_drift,0.9933261871337891,no
+2025-09-20T10:11:01.882986,RUL divergence: model vs baseline differs by ~64h at cycle 31 · strongest sensor shift: s_7 (~1.7σ),intent_sensor_drift,0.9931729435920715,no
+2025-09-20T10:11:01.991215,RUL divergence: model vs baseline differs by ~88h at cycle 31 · strongest sensor shift: s_7 (~2.3σ),intent_sensor_drift,0.9932445883750916,no
+2025-09-20T10:11:02.115171,RUL divergence: model vs baseline differs by ~152h at cycle 31 · strongest sensor shift: s_14 (~1.9σ),intent_sensor_drift,0.9932183623313904,no
+2025-09-20T10:11:02.218841,RUL divergence: model vs baseline differs by ~85h at cycle 31 · strongest sensor shift: s_9 (~1.6σ),intent_sensor_drift,0.9932963252067566,no
+2025-09-20T10:11:02.315230,RUL divergence: model vs baseline differs by ~78h at cycle 31 · strongest sensor shift: s_2 (~2.0σ),intent_sensor_drift,0.9931389689445496,no
+2025-09-20T10:11:02.587375,RUL divergence: model vs baseline differs by ~46h at cycle 31 · strongest sensor shift: s_17 (~1.1σ),intent_sensor_drift,0.9934146404266357,no
+2025-09-20T10:11:02.669175,RUL divergence: model vs baseline differs by ~145h at cycle 31 · strongest sensor shift: s_3 (~1.1σ),intent_sensor_drift,0.9932956099510193,no
+2025-09-20T10:11:02.752966,RUL divergence: model vs baseline differs by ~79h at cycle 31 · strongest sensor shift: s_12 (~2.1σ),intent_sensor_drift,0.9932246804237366,no
+2025-09-20T10:11:02.892269,RUL divergence: model vs baseline differs by ~24h at cycle 31 · strongest sensor shift: s_9 (~1.7σ),intent_sensor_drift,0.9933591485023499,no
+2025-09-20T10:11:03.119714,RUL divergence: model vs baseline differs by ~47h at cycle 31 · strongest sensor shift: s_2 (~1.9σ),intent_sensor_drift,0.993459165096283,no
+2025-09-20T10:11:03.324111,RUL divergence: model vs baseline differs by ~82h at cycle 31 · strongest sensor shift: s_3 (~2.3σ),intent_sensor_drift,0.9932063817977905,no
+2025-09-20T10:11:03.422497,RUL divergence: model vs baseline differs by ~67h at cycle 31 · strongest sensor shift: s_4 (~1.7σ),intent_sensor_drift,0.9933157563209534,no
+2025-09-20T10:11:03.667339,RUL divergence: model vs baseline differs by ~150h at cycle 31 · strongest sensor shift: s_17 (~1.4σ),intent_sensor_drift,0.993511974811554,no
+2025-09-20T10:11:03.743964,RUL divergence: model vs baseline differs by ~104h at cycle 31 · strongest sensor shift: s_15 (~1.4σ),intent_sensor_drift,0.9932439923286438,no
+2025-09-20T10:11:03.828996,RUL divergence: model vs baseline differs by ~81h at cycle 31 · strongest sensor shift: s_7 (~2.0σ),intent_sensor_drift,0.9931063055992126,no
+2025-09-20T10:11:03.904664,RUL divergence: model vs baseline differs by ~72h at cycle 31 · strongest sensor shift: s_14 (~1.8σ),intent_sensor_drift,0.9933261871337891,no
+2025-09-20T10:11:04.008343,RUL divergence: model vs baseline differs by ~61h at cycle 31 · strongest sensor shift: s_17 (~1.9σ),intent_sensor_drift,0.9933544397354126,no
+2025-09-20T10:11:04.099574,RUL divergence: model vs baseline differs by ~27h at cycle 31 · strongest sensor shift: s_3 (~1.8σ),intent_sensor_drift,0.9934096932411194,no
+2025-09-20T10:11:04.188687,RUL divergence: model vs baseline differs by ~59h at cycle 31 · strongest sensor shift: s_8 (~1.3σ),intent_sensor_drift,0.9933158755302429,no
+2025-09-20T10:11:04.294378,RUL divergence: model vs baseline differs by ~90h at cycle 31 · strongest sensor shift: s_15 (~2.1σ),intent_sensor_drift,0.9933304190635681,no
+2025-09-20T10:11:04.391606,RUL divergence: model vs baseline differs by ~41h at cycle 31 · strongest sensor shift: s_13 (~1.7σ),intent_sensor_drift,0.9933825731277466,no
+2025-09-20T10:11:04.466790,RUL divergence: model vs baseline differs by ~31h at cycle 31 · strongest sensor shift: s_12 (~1.4σ),intent_sensor_drift,0.9932857155799866,no
+2025-09-20T10:11:04.609086,RUL divergence: model vs baseline differs by ~100h at cycle 31 · strongest sensor shift: s_11 (~2.2σ),intent_sensor_drift,0.9932900667190552,no
+2025-09-20T10:11:05.016830,RUL divergence: model vs baseline differs by ~76h at cycle 31 · strongest sensor shift: s_4 (~2.0σ),intent_sensor_drift,0.9932264685630798,no
+2025-09-20T10:11:05.273034,RUL divergence: model vs baseline differs by ~76h at cycle 31 · strongest sensor shift: s_3 (~1.7σ),intent_sensor_drift,0.9933858513832092,no
+2025-09-20T10:11:05.435880,RUL divergence: model vs baseline differs by ~64h at cycle 31 · strongest sensor shift: s_13 (~1.5σ),intent_sensor_drift,0.9932845830917358,no
+2025-09-20T10:11:05.609080,RUL divergence: model vs baseline differs by ~38h at cycle 31 · strongest sensor shift: s_17 (~1.8σ),intent_sensor_drift,0.9934133887290955,no
+2025-09-20T10:11:05.882841,RUL divergence: model vs baseline differs by ~141h at cycle 31 · strongest sensor shift: s_21 (~2.1σ),intent_sensor_drift,0.9932929277420044,no
+2025-09-20T10:11:06.230203,RUL divergence: model vs baseline differs by ~98h at cycle 31 · strongest sensor shift: s_8 (~1.6σ),intent_sensor_drift,0.993139922618866,no
+2025-09-20T10:11:06.520260,RUL divergence: model vs baseline differs by ~115h at cycle 31 · strongest sensor shift: s_20 (~2.2σ),intent_sensor_drift,0.9933458566665649,no
+2025-09-20T10:11:06.782617,RUL divergence: model vs baseline differs by ~103h at cycle 31 · strongest sensor shift: s_12 (~1.6σ),intent_sensor_drift,0.9931835532188416,no
+2025-09-20T10:11:07.204632,RUL divergence: model vs baseline differs by ~99h at cycle 31 · strongest sensor shift: s_11 (~2.0σ),intent_sensor_drift,0.9929503202438354,no
+2025-09-20T10:11:07.360195,RUL divergence: model vs baseline differs by ~96h at cycle 31 · strongest sensor shift: s_14 (~1.8σ),intent_sensor_drift,0.993248701095581,no
+2025-09-20T10:11:07.486385,RUL divergence: model vs baseline differs by ~109h at cycle 31 · strongest sensor shift: s_21 (~1.6σ),intent_sensor_drift,0.9932647943496704,no
+2025-09-20T10:11:07.747221,RUL divergence: model vs baseline differs by ~83h at cycle 31 · strongest sensor shift: s_17 (~1.4σ),intent_sensor_drift,0.9934306740760803,no
+2025-09-20T10:11:07.912690,RUL divergence: model vs baseline differs by ~158h at cycle 31 · strongest sensor shift: s_12 (~1.6σ),intent_sensor_drift,0.9932355284690857,no
+2025-09-20T10:11:08.242941,RUL divergence: model vs baseline differs by ~70h at cycle 31 · strongest sensor shift: s_4 (~1.5σ),intent_sensor_drift,0.9933590292930603,no
+2025-09-20T10:11:08.371020,RUL divergence: model vs baseline differs by ~128h at cycle 31 · strongest sensor shift: s_11 (~1.5σ),intent_sensor_drift,0.9931584000587463,no
+2025-09-20T10:11:08.528667,RUL divergence: model vs baseline differs by ~36h at cycle 31 · strongest sensor shift: s_12 (~1.8σ),intent_sensor_drift,0.9933744072914124,no
+2025-09-20T10:11:08.651627,RUL divergence: model vs baseline differs by ~47h at cycle 31 · strongest sensor shift: s_9 (~2.3σ),intent_sensor_drift,0.993410050868988,no
+2025-09-20T10:11:08.780213,RUL divergence: model vs baseline differs by ~108h at cycle 31 · strongest sensor shift: s_13 (~1.9σ),intent_sensor_drift,0.9930972456932068,no
+2025-09-20T10:11:09.183908,RUL divergence: model vs baseline differs by ~82h at cycle 31 · strongest sensor shift: s_14 (~1.7σ),intent_sensor_drift,0.9931955337524414,no
+2025-09-20T10:11:09.311062,RUL divergence: model vs baseline differs by ~64h at cycle 31 · strongest sensor shift: s_15 (~1.9σ),intent_sensor_drift,0.9932699799537659,no
+2025-09-20T10:11:09.422099,RUL divergence: model vs baseline differs by ~86h at cycle 31 · strongest sensor shift: s_3 (~1.8σ),intent_sensor_drift,0.993314802646637,no
+2025-09-20T10:11:09.512261,RUL divergence: model vs baseline differs by ~62h at cycle 31 · strongest sensor shift: s_12 (~2.0σ),intent_sensor_drift,0.9930998086929321,no
+2025-09-20T10:11:09.610713,RUL divergence: model vs baseline differs by ~211h at cycle 31 · strongest sensor shift: s_20 (~1.2σ),intent_sensor_drift,0.9932424426078796,no
+2025-09-20T10:11:09.786540,RUL divergence: model vs baseline differs by ~35h at cycle 31 · strongest sensor shift: s_3 (~1.3σ),intent_sensor_drift,0.9934499859809875,no
+2025-09-20T10:11:09.890564,RUL divergence: model vs baseline differs by ~66h at cycle 31 · strongest sensor shift: s_4 (~1.6σ),intent_sensor_drift,0.993335485458374,no
+2025-09-20T10:11:10.066378,RUL divergence: model vs baseline differs by ~247h at cycle 31 · strongest sensor shift: s_4 (~1.5σ),intent_sensor_drift,0.9932593703269958,no
+2025-09-20T10:11:10.173715,RUL divergence: model vs baseline differs by ~70h at cycle 31 · strongest sensor shift: s_12 (~1.9σ),intent_sensor_drift,0.9932714104652405,no
+2025-09-20T10:11:10.448710,RUL divergence: model vs baseline differs by ~236h at cycle 31 · strongest sensor shift: s_14 (~2.5σ),intent_sensor_drift,0.993239164352417,no
+2025-09-20T10:11:10.549365,RUL divergence: model vs baseline differs by ~27h at cycle 31 · strongest sensor shift: s_11 (~1.7σ),intent_sensor_drift,0.9932812452316284,no
+2025-09-20T10:11:10.732719,RUL divergence: model vs baseline differs by ~83h at cycle 31 · strongest sensor shift: s_12 (~2.1σ),intent_sensor_drift,0.9932844638824463,no
+2025-09-20T10:11:10.970003,RUL divergence: model vs baseline differs by ~104h at cycle 31 · strongest sensor shift: s_17 (~1.3σ),intent_sensor_drift,0.9932281374931335,no
+2025-09-20T10:11:11.114617,RUL divergence: model vs baseline differs by ~132h at cycle 31 · strongest sensor shift: s_11 (~2.3σ),intent_sensor_drift,0.9932021498680115,no
+2025-09-20T10:11:11.317404,RUL divergence: model vs baseline differs by ~47h at cycle 31 · strongest sensor shift: s_9 (~1.9σ),intent_sensor_drift,0.9933673739433289,no
+2025-09-20T10:11:11.585271,RUL divergence: model vs baseline differs by ~123h at cycle 31 · strongest sensor shift: s_15 (~1.6σ),intent_sensor_drift,0.9934511184692383,no
+2025-09-20T10:11:11.921814,RUL divergence: model vs baseline differs by ~81h at cycle 31 · strongest sensor shift: s_2 (~1.5σ),intent_sensor_drift,0.9933152794837952,no
+2025-09-20T10:11:12.054996,RUL divergence: model vs baseline differs by ~72h at cycle 31 · strongest sensor shift: s_7 (~2.3σ),intent_sensor_drift,0.9933140873908997,no
+2025-09-20T10:11:12.171823,RUL divergence: model vs baseline differs by ~106h at cycle 31 · strongest sensor shift: s_4 (~2.1σ),intent_sensor_drift,0.9931430816650391,no
+2025-09-20T10:11:12.267757,RUL divergence: model vs baseline differs by ~73h at cycle 31 · strongest sensor shift: s_7 (~2.4σ),intent_sensor_drift,0.9933567643165588,no
+2025-09-20T10:11:12.540466,RUL divergence: model vs baseline differs by ~76h at cycle 31 · strongest sensor shift: s_12 (~1.6σ),intent_sensor_drift,0.9933412671089172,no
+2025-09-20T10:11:12.808611,RUL divergence: model vs baseline differs by ~140h at cycle 31 · strongest sensor shift: s_15 (~1.7σ),intent_sensor_drift,0.9934258460998535,no
+2025-09-20T10:11:13.101454,RUL divergence: model vs baseline differs by ~96h at cycle 31 · strongest sensor shift: s_2 (~1.7σ),intent_sensor_drift,0.9932483434677124,no
+2025-09-20T10:11:13.297956,RUL divergence: model vs baseline differs by ~173h at cycle 31 · strongest sensor shift: s_9 (~2.0σ),intent_sensor_drift,0.9930399656295776,no
+2025-09-20T10:11:13.684259,RUL divergence: model vs baseline differs by ~146h at cycle 31 · strongest sensor shift: s_15 (~1.0σ),intent_sensor_drift,0.9932414293289185,no
+2025-09-20T10:11:14.061536,RUL divergence: model vs baseline differs by ~123h at cycle 31 · strongest sensor shift: s_3 (~1.5σ),intent_sensor_drift,0.9934332370758057,no
+2025-09-20T10:11:14.569855,RUL divergence: model vs baseline differs by ~174h at cycle 31 · strongest sensor shift: s_7 (~1.9σ),intent_sensor_drift,0.9931973218917847,no
+2025-09-20T10:11:15.084155,RUL divergence: model vs baseline differs by ~61h at cycle 31 · strongest sensor shift: s_8 (~1.9σ),intent_sensor_drift,0.9932546019554138,no
+2025-09-20T10:11:15.429997,RUL divergence: model vs baseline differs by ~98h at cycle 31 · strongest sensor shift: s_4 (~1.7σ),intent_sensor_drift,0.9931139349937439,no
+2025-09-20T10:11:15.617246,RUL divergence: model vs baseline differs by ~89h at cycle 31 · strongest sensor shift: s_14 (~1.9σ),intent_sensor_drift,0.9932631850242615,no
+2025-09-20T10:11:15.942159,RUL divergence: model vs baseline differs by ~51h at cycle 31 · strongest sensor shift: s_13 (~1.7σ),intent_sensor_drift,0.9932756423950195,no
+2025-09-20T10:11:16.246927,RUL divergence: model vs baseline differs by ~53h at cycle 31 · strongest sensor shift: s_13 (~2.3σ),intent_sensor_drift,0.9933198690414429,no
+2025-09-20T10:11:16.377355,RUL divergence: model vs baseline differs by ~220h at cycle 31 · strongest sensor shift: s_12 (~1.4σ),intent_sensor_drift,0.9933794736862183,no
+2025-09-20T10:11:16.679379,RUL divergence: model vs baseline differs by ~58h at cycle 31 · strongest sensor shift: s_21 (~1.8σ),intent_sensor_drift,0.9933362007141113,no
+2025-09-20T10:11:17.006326,RUL divergence: model vs baseline differs by ~190h at cycle 31 · strongest sensor shift: s_2 (~2.3σ),intent_sensor_drift,0.9933512806892395,no
+2025-09-20T10:11:17.634616,RUL divergence: model vs baseline differs by ~175h at cycle 31 · strongest sensor shift: s_13 (~1.7σ),intent_sensor_drift,0.9933103322982788,no
+2025-09-20T10:11:18.011809,RUL divergence: model vs baseline differs by ~205h at cycle 31 · strongest sensor shift: s_17 (~1.7σ),intent_sensor_drift,0.9931036829948425,no
+2025-09-20T10:11:18.259342,RUL divergence: model vs baseline differs by ~56h at cycle 31 · strongest sensor shift: s_8 (~1.8σ),intent_sensor_drift,0.9933202266693115,no
+2025-09-20T10:11:18.397298,RUL divergence: model vs baseline differs by ~47h at cycle 31 · strongest sensor shift: s_13 (~1.6σ),intent_sensor_drift,0.9934727549552917,no
+2025-09-20T10:11:18.940260,RUL divergence: model vs baseline differs by ~68h at cycle 31 · strongest sensor shift: s_2 (~2.4σ),intent_sensor_drift,0.9932678937911987,no
+2025-09-20T10:11:19.194839,RUL divergence: model vs baseline differs by ~80h at cycle 31 · strongest sensor shift: s_8 (~1.8σ),intent_sensor_drift,0.9931843876838684,no
+2025-09-20T10:11:19.404951,RUL divergence: model vs baseline differs by ~23h at cycle 200 · strongest sensor shift: s_2 (~3.0σ),intent_sensor_drift,0.9931665062904358,no
+2025-09-20T10:11:19.554206,RUL divergence: model vs baseline differs by ~20h at cycle 240 · strongest sensor shift: s_3 (~3.0σ),intent_sensor_drift,0.9931536912918091,no
+2025-09-20T10:11:19.791734,RUL divergence: model vs baseline differs by ~33h at cycle 287 · strongest sensor shift: s_13 (~2.0σ),intent_sensor_drift,0.9932370781898499,no
+2025-09-20T10:16:35.003742,⚠️ Temperature anomaly detected at cycle 31,intent_uncertain,0.5030806064605713,yes
+2025-09-20T10:16:35.080332,RUL divergence: model vs baseline differs by ~61h at cycle 31 · strongest sensor shift: s_14 (~1.7σ),intent_sensor_drift,0.9933063387870789,no
+2025-09-20T10:16:35.168815,⚠️ Power anomaly detected at cycle 31,intent_wrong_scaling,0.7668352723121643,no
+2025-09-20T10:16:35.254712,RUL divergence: model vs baseline differs by ~159h at cycle 31 · strongest sensor shift: s_15 (~1.9σ),intent_sensor_drift,0.9931489825248718,no
+2025-09-20T10:16:35.307174,RUL divergence: model vs baseline differs by ~56h at cycle 31 · strongest sensor shift: s_7 (~2.0σ),intent_sensor_drift,0.9932628273963928,no
+2025-09-20T10:16:35.370858,RUL divergence: model vs baseline differs by ~97h at cycle 31 · strongest sensor shift: s_3 (~1.5σ),intent_sensor_drift,0.9933028221130371,no
+2025-09-20T10:16:35.429127,RUL divergence: model vs baseline differs by ~145h at cycle 31 · strongest sensor shift: s_21 (~1.8σ),intent_sensor_drift,0.9932770133018494,no
+2025-09-20T10:16:35.483952,⚠️ Vibration anomaly detected at cycle 31,intent_uncertain,0.6210988163948059,yes
+2025-09-20T10:16:35.541211,RUL divergence: model vs baseline differs by ~54h at cycle 31 · strongest sensor shift: s_4 (~1.9σ),intent_sensor_drift,0.9933609962463379,no
+2025-09-20T10:16:35.595519,RUL divergence: model vs baseline differs by ~134h at cycle 31 · strongest sensor shift: s_8 (~1.4σ),intent_sensor_drift,0.9934005737304688,no
+2025-09-20T10:16:35.657759,RUL divergence: model vs baseline differs by ~41h at cycle 31 · strongest sensor shift: s_15 (~2.3σ),intent_sensor_drift,0.9934448003768921,no
+2025-09-20T10:16:35.709449,RUL divergence: model vs baseline differs by ~78h at cycle 31 · strongest sensor shift: s_15 (~1.9σ),intent_sensor_drift,0.9933016300201416,no
+2025-09-20T10:16:35.816509,RUL divergence: model vs baseline differs by ~99h at cycle 31 · strongest sensor shift: s_21 (~1.5σ),intent_sensor_drift,0.9932647943496704,no
+2025-09-20T10:16:35.887687,RUL divergence: model vs baseline differs by ~116h at cycle 31 · strongest sensor shift: s_3 (~2.1σ),intent_sensor_drift,0.993327260017395,no
+2025-09-20T10:16:35.995959,⚠️ Speed anomaly detected at cycle 31,intent_wrong_scaling,0.8108221888542175,no
+2025-09-20T10:16:36.071130,RUL divergence: model vs baseline differs by ~86h at cycle 31 · strongest sensor shift: s_13 (~1.3σ),intent_sensor_drift,0.9933083057403564,no
+2025-09-20T10:16:36.260564,RUL divergence: model vs baseline differs by ~63h at cycle 31 · strongest sensor shift: s_8 (~1.4σ),intent_sensor_drift,0.9933314919471741,no
+2025-09-20T10:16:36.367734,RUL divergence: model vs baseline differs by ~65h at cycle 31 · strongest sensor shift: s_4 (~2.5σ),intent_sensor_drift,0.9933313727378845,no
+2025-09-20T10:16:36.447562,RUL divergence: model vs baseline differs by ~72h at cycle 31 · strongest sensor shift: s_11 (~2.0σ),intent_sensor_drift,0.9931040406227112,no
+2025-09-20T10:16:36.541709,RUL divergence: model vs baseline differs by ~99h at cycle 31 · strongest sensor shift: s_4 (~2.0σ),intent_sensor_drift,0.993021547794342,no
+2025-09-20T10:16:36.694724,RUL divergence: model vs baseline differs by ~167h at cycle 31 · strongest sensor shift: s_9 (~1.9σ),intent_sensor_drift,0.9933261871337891,no
+2025-09-20T10:16:36.735855,RUL divergence: model vs baseline differs by ~64h at cycle 31 · strongest sensor shift: s_7 (~1.7σ),intent_sensor_drift,0.9931729435920715,no
+2025-09-20T10:16:36.778077,RUL divergence: model vs baseline differs by ~88h at cycle 31 · strongest sensor shift: s_7 (~2.3σ),intent_sensor_drift,0.9932445883750916,no
+2025-09-20T10:16:36.819736,RUL divergence: model vs baseline differs by ~152h at cycle 31 · strongest sensor shift: s_14 (~1.9σ),intent_sensor_drift,0.9932183623313904,no
+2025-09-20T10:16:36.861540,RUL divergence: model vs baseline differs by ~85h at cycle 31 · strongest sensor shift: s_9 (~1.6σ),intent_sensor_drift,0.9932963252067566,no
+2025-09-20T10:16:36.899216,RUL divergence: model vs baseline differs by ~78h at cycle 31 · strongest sensor shift: s_2 (~2.0σ),intent_sensor_drift,0.9931389689445496,no
+2025-09-20T10:16:36.991659,RUL divergence: model vs baseline differs by ~46h at cycle 31 · strongest sensor shift: s_17 (~1.1σ),intent_sensor_drift,0.9934146404266357,no
+2025-09-20T10:16:37.040512,RUL divergence: model vs baseline differs by ~145h at cycle 31 · strongest sensor shift: s_3 (~1.1σ),intent_sensor_drift,0.9932956099510193,no
+2025-09-20T10:16:37.115593,RUL divergence: model vs baseline differs by ~79h at cycle 31 · strongest sensor shift: s_12 (~2.1σ),intent_sensor_drift,0.9932246804237366,no
+2025-09-20T10:16:37.157819,RUL divergence: model vs baseline differs by ~24h at cycle 31 · strongest sensor shift: s_9 (~1.7σ),intent_sensor_drift,0.9933591485023499,no
+2025-09-20T10:16:37.239809,RUL divergence: model vs baseline differs by ~47h at cycle 31 · strongest sensor shift: s_2 (~1.9σ),intent_sensor_drift,0.993459165096283,no
+2025-09-20T10:16:37.317577,RUL divergence: model vs baseline differs by ~82h at cycle 31 · strongest sensor shift: s_3 (~2.3σ),intent_sensor_drift,0.9932063817977905,no
+2025-09-20T10:16:37.365476,RUL divergence: model vs baseline differs by ~67h at cycle 31 · strongest sensor shift: s_4 (~1.7σ),intent_sensor_drift,0.9933157563209534,no
+2025-09-20T10:16:37.457758,RUL divergence: model vs baseline differs by ~150h at cycle 31 · strongest sensor shift: s_17 (~1.4σ),intent_sensor_drift,0.993511974811554,no
+2025-09-20T10:16:37.500202,RUL divergence: model vs baseline differs by ~104h at cycle 31 · strongest sensor shift: s_15 (~1.4σ),intent_sensor_drift,0.9932439923286438,no
+2025-09-20T10:16:37.556153,RUL divergence: model vs baseline differs by ~81h at cycle 31 · strongest sensor shift: s_7 (~2.0σ),intent_sensor_drift,0.9931063055992126,no
+2025-09-20T10:16:37.601570,RUL divergence: model vs baseline differs by ~72h at cycle 31 · strongest sensor shift: s_14 (~1.8σ),intent_sensor_drift,0.9933261871337891,no
+2025-09-20T10:16:37.646926,RUL divergence: model vs baseline differs by ~61h at cycle 31 · strongest sensor shift: s_17 (~1.9σ),intent_sensor_drift,0.9933544397354126,no
+2025-09-20T10:16:37.692368,RUL divergence: model vs baseline differs by ~27h at cycle 31 · strongest sensor shift: s_3 (~1.8σ),intent_sensor_drift,0.9934096932411194,no
+2025-09-20T10:16:37.733867,RUL divergence: model vs baseline differs by ~59h at cycle 31 · strongest sensor shift: s_8 (~1.3σ),intent_sensor_drift,0.9933158755302429,no
+2025-09-20T10:16:37.773872,RUL divergence: model vs baseline differs by ~90h at cycle 31 · strongest sensor shift: s_15 (~2.1σ),intent_sensor_drift,0.9933304190635681,no
+2025-09-20T10:16:37.817236,RUL divergence: model vs baseline differs by ~41h at cycle 31 · strongest sensor shift: s_13 (~1.7σ),intent_sensor_drift,0.9933825731277466,no
+2025-09-20T10:16:37.859873,RUL divergence: model vs baseline differs by ~31h at cycle 31 · strongest sensor shift: s_12 (~1.4σ),intent_sensor_drift,0.9932857155799866,no
+2025-09-20T10:16:37.943047,RUL divergence: model vs baseline differs by ~100h at cycle 31 · strongest sensor shift: s_11 (~2.2σ),intent_sensor_drift,0.9932900667190552,no
+2025-09-20T10:16:38.126677,RUL divergence: model vs baseline differs by ~76h at cycle 31 · strongest sensor shift: s_4 (~2.0σ),intent_sensor_drift,0.9932264685630798,no
+2025-09-20T10:16:38.224900,RUL divergence: model vs baseline differs by ~76h at cycle 31 · strongest sensor shift: s_3 (~1.7σ),intent_sensor_drift,0.9933858513832092,no
+2025-09-20T10:16:38.266035,RUL divergence: model vs baseline differs by ~64h at cycle 31 · strongest sensor shift: s_13 (~1.5σ),intent_sensor_drift,0.9932845830917358,no
+2025-09-20T10:16:38.313960,RUL divergence: model vs baseline differs by ~38h at cycle 31 · strongest sensor shift: s_17 (~1.8σ),intent_sensor_drift,0.9934133887290955,no
+2025-09-20T10:16:38.396339,RUL divergence: model vs baseline differs by ~141h at cycle 31 · strongest sensor shift: s_21 (~2.1σ),intent_sensor_drift,0.9932929277420044,no
+2025-09-20T10:16:38.479476,RUL divergence: model vs baseline differs by ~98h at cycle 31 · strongest sensor shift: s_8 (~1.6σ),intent_sensor_drift,0.993139922618866,no
+2025-09-20T10:16:38.561271,RUL divergence: model vs baseline differs by ~115h at cycle 31 · strongest sensor shift: s_20 (~2.2σ),intent_sensor_drift,0.9933458566665649,no
+2025-09-20T10:16:38.649252,RUL divergence: model vs baseline differs by ~103h at cycle 31 · strongest sensor shift: s_12 (~1.6σ),intent_sensor_drift,0.9931835532188416,no
+2025-09-20T10:16:38.693019,RUL divergence: model vs baseline differs by ~99h at cycle 31 · strongest sensor shift: s_11 (~2.0σ),intent_sensor_drift,0.9929503202438354,no
+2025-09-20T10:16:38.739318,RUL divergence: model vs baseline differs by ~96h at cycle 31 · strongest sensor shift: s_14 (~1.8σ),intent_sensor_drift,0.993248701095581,no
+2025-09-20T10:16:38.788382,RUL divergence: model vs baseline differs by ~109h at cycle 31 · strongest sensor shift: s_21 (~1.6σ),intent_sensor_drift,0.9932647943496704,no
+2025-09-20T10:16:38.873579,RUL divergence: model vs baseline differs by ~83h at cycle 31 · strongest sensor shift: s_17 (~1.4σ),intent_sensor_drift,0.9934306740760803,no
+2025-09-20T10:16:38.924683,RUL divergence: model vs baseline differs by ~158h at cycle 31 · strongest sensor shift: s_12 (~1.6σ),intent_sensor_drift,0.9932355284690857,no
+2025-09-20T10:16:39.015770,RUL divergence: model vs baseline differs by ~70h at cycle 31 · strongest sensor shift: s_4 (~1.5σ),intent_sensor_drift,0.9933590292930603,no
+2025-09-20T10:16:39.063780,RUL divergence: model vs baseline differs by ~128h at cycle 31 · strongest sensor shift: s_11 (~1.5σ),intent_sensor_drift,0.9931584000587463,no
+2025-09-20T10:16:39.109951,RUL divergence: model vs baseline differs by ~36h at cycle 31 · strongest sensor shift: s_12 (~1.8σ),intent_sensor_drift,0.9933744072914124,no
+2025-09-20T10:16:39.158400,RUL divergence: model vs baseline differs by ~47h at cycle 31 · strongest sensor shift: s_9 (~2.3σ),intent_sensor_drift,0.993410050868988,no
+2025-09-20T10:16:39.213998,RUL divergence: model vs baseline differs by ~108h at cycle 31 · strongest sensor shift: s_13 (~1.9σ),intent_sensor_drift,0.9930972456932068,no
+2025-09-20T10:16:39.302965,RUL divergence: model vs baseline differs by ~82h at cycle 31 · strongest sensor shift: s_14 (~1.7σ),intent_sensor_drift,0.9931955337524414,no
+2025-09-20T10:16:39.356028,RUL divergence: model vs baseline differs by ~64h at cycle 31 · strongest sensor shift: s_15 (~1.9σ),intent_sensor_drift,0.9932699799537659,no
+2025-09-20T10:16:39.414367,RUL divergence: model vs baseline differs by ~86h at cycle 31 · strongest sensor shift: s_3 (~1.8σ),intent_sensor_drift,0.993314802646637,no
+2025-09-20T10:16:39.475028,RUL divergence: model vs baseline differs by ~62h at cycle 31 · strongest sensor shift: s_12 (~2.0σ),intent_sensor_drift,0.9930998086929321,no
+2025-09-20T10:16:39.566245,RUL divergence: model vs baseline differs by ~211h at cycle 31 · strongest sensor shift: s_20 (~1.2σ),intent_sensor_drift,0.9932424426078796,no
+2025-09-20T10:16:39.675475,RUL divergence: model vs baseline differs by ~35h at cycle 31 · strongest sensor shift: s_3 (~1.3σ),intent_sensor_drift,0.9934499859809875,no
+2025-09-20T10:16:39.731323,RUL divergence: model vs baseline differs by ~66h at cycle 31 · strongest sensor shift: s_4 (~1.6σ),intent_sensor_drift,0.993335485458374,no
+2025-09-20T10:16:39.825407,RUL divergence: model vs baseline differs by ~247h at cycle 31 · strongest sensor shift: s_4 (~1.5σ),intent_sensor_drift,0.9932593703269958,no
+2025-09-20T10:16:39.880387,RUL divergence: model vs baseline differs by ~70h at cycle 31 · strongest sensor shift: s_12 (~1.9σ),intent_sensor_drift,0.9932714104652405,no
+2025-09-20T10:16:39.984107,RUL divergence: model vs baseline differs by ~236h at cycle 31 · strongest sensor shift: s_14 (~2.5σ),intent_sensor_drift,0.993239164352417,no
+2025-09-20T10:16:40.047139,RUL divergence: model vs baseline differs by ~27h at cycle 31 · strongest sensor shift: s_11 (~1.7σ),intent_sensor_drift,0.9932812452316284,no
+2025-09-20T10:16:40.140212,RUL divergence: model vs baseline differs by ~83h at cycle 31 · strongest sensor shift: s_12 (~2.1σ),intent_sensor_drift,0.9932844638824463,no
+2025-09-20T10:16:40.224687,RUL divergence: model vs baseline differs by ~104h at cycle 31 · strongest sensor shift: s_17 (~1.3σ),intent_sensor_drift,0.9932281374931335,no
+2025-09-20T10:16:40.271351,RUL divergence: model vs baseline differs by ~132h at cycle 31 · strongest sensor shift: s_11 (~2.3σ),intent_sensor_drift,0.9932021498680115,no
+2025-09-20T10:16:40.366999,RUL divergence: model vs baseline differs by ~47h at cycle 31 · strongest sensor shift: s_9 (~1.9σ),intent_sensor_drift,0.9933673739433289,no
+2025-09-20T10:16:40.484339,RUL divergence: model vs baseline differs by ~123h at cycle 31 · strongest sensor shift: s_15 (~1.6σ),intent_sensor_drift,0.9934511184692383,no
+2025-09-20T10:16:40.627790,RUL divergence: model vs baseline differs by ~81h at cycle 31 · strongest sensor shift: s_2 (~1.5σ),intent_sensor_drift,0.9933152794837952,no
+2025-09-20T10:16:40.698586,RUL divergence: model vs baseline differs by ~72h at cycle 31 · strongest sensor shift: s_7 (~2.3σ),intent_sensor_drift,0.9933140873908997,no
+2025-09-20T10:16:40.759877,RUL divergence: model vs baseline differs by ~106h at cycle 31 · strongest sensor shift: s_4 (~2.1σ),intent_sensor_drift,0.9931430816650391,no
+2025-09-20T10:16:40.839410,RUL divergence: model vs baseline differs by ~73h at cycle 31 · strongest sensor shift: s_7 (~2.4σ),intent_sensor_drift,0.9933567643165588,no
+2025-09-20T10:16:40.953243,RUL divergence: model vs baseline differs by ~76h at cycle 31 · strongest sensor shift: s_12 (~1.6σ),intent_sensor_drift,0.9933412671089172,no
+2025-09-20T10:16:41.104351,RUL divergence: model vs baseline differs by ~140h at cycle 31 · strongest sensor shift: s_15 (~1.7σ),intent_sensor_drift,0.9934258460998535,no
+2025-09-20T10:16:41.230573,RUL divergence: model vs baseline differs by ~96h at cycle 31 · strongest sensor shift: s_2 (~1.7σ),intent_sensor_drift,0.9932483434677124,no
+2025-09-20T10:16:41.286312,RUL divergence: model vs baseline differs by ~173h at cycle 31 · strongest sensor shift: s_9 (~2.0σ),intent_sensor_drift,0.9930399656295776,no
+2025-09-20T10:16:41.400565,RUL divergence: model vs baseline differs by ~146h at cycle 31 · strongest sensor shift: s_15 (~1.0σ),intent_sensor_drift,0.9932414293289185,no
+2025-09-20T10:16:41.502193,RUL divergence: model vs baseline differs by ~123h at cycle 31 · strongest sensor shift: s_3 (~1.5σ),intent_sensor_drift,0.9934332370758057,no
+2025-09-20T10:16:41.625919,RUL divergence: model vs baseline differs by ~174h at cycle 31 · strongest sensor shift: s_7 (~1.9σ),intent_sensor_drift,0.9931973218917847,no
+2025-09-20T10:16:41.742279,RUL divergence: model vs baseline differs by ~61h at cycle 31 · strongest sensor shift: s_8 (~1.9σ),intent_sensor_drift,0.9932546019554138,no
+2025-09-20T10:16:41.916559,RUL divergence: model vs baseline differs by ~98h at cycle 31 · strongest sensor shift: s_4 (~1.7σ),intent_sensor_drift,0.9931139349937439,no
+2025-09-20T10:16:42.005361,RUL divergence: model vs baseline differs by ~89h at cycle 31 · strongest sensor shift: s_14 (~1.9σ),intent_sensor_drift,0.9932631850242615,no
+2025-09-20T10:16:42.270280,RUL divergence: model vs baseline differs by ~51h at cycle 31 · strongest sensor shift: s_13 (~1.7σ),intent_sensor_drift,0.9932756423950195,no
+2025-09-20T10:16:42.464962,RUL divergence: model vs baseline differs by ~53h at cycle 31 · strongest sensor shift: s_13 (~2.3σ),intent_sensor_drift,0.9933198690414429,no
+2025-09-20T10:16:42.574228,RUL divergence: model vs baseline differs by ~220h at cycle 31 · strongest sensor shift: s_12 (~1.4σ),intent_sensor_drift,0.9933794736862183,no
+2025-09-20T10:16:42.708131,RUL divergence: model vs baseline differs by ~58h at cycle 31 · strongest sensor shift: s_21 (~1.8σ),intent_sensor_drift,0.9933362007141113,no
+2025-09-20T10:16:42.839053,RUL divergence: model vs baseline differs by ~190h at cycle 31 · strongest sensor shift: s_2 (~2.3σ),intent_sensor_drift,0.9933512806892395,no
+2025-09-20T10:16:43.150279,RUL divergence: model vs baseline differs by ~175h at cycle 31 · strongest sensor shift: s_13 (~1.7σ),intent_sensor_drift,0.9933103322982788,no
+2025-09-20T10:16:43.347248,RUL divergence: model vs baseline differs by ~205h at cycle 31 · strongest sensor shift: s_17 (~1.7σ),intent_sensor_drift,0.9931036829948425,no
+2025-09-20T10:16:43.473623,RUL divergence: model vs baseline differs by ~56h at cycle 31 · strongest sensor shift: s_8 (~1.8σ),intent_sensor_drift,0.9933202266693115,no
+2025-09-20T10:16:43.571040,RUL divergence: model vs baseline differs by ~47h at cycle 31 · strongest sensor shift: s_13 (~1.6σ),intent_sensor_drift,0.9934727549552917,no
+2025-09-20T10:16:43.794550,RUL divergence: model vs baseline differs by ~68h at cycle 31 · strongest sensor shift: s_2 (~2.4σ),intent_sensor_drift,0.9932678937911987,no
+2025-09-20T10:16:43.860959,RUL divergence: model vs baseline differs by ~80h at cycle 31 · strongest sensor shift: s_8 (~1.8σ),intent_sensor_drift,0.9931843876838684,no
+2025-09-20T10:16:43.923493,RUL divergence: model vs baseline differs by ~23h at cycle 200 · strongest sensor shift: s_2 (~3.0σ),intent_sensor_drift,0.9931665062904358,no
+2025-09-20T10:16:44.005343,RUL divergence: model vs baseline differs by ~20h at cycle 240 · strongest sensor shift: s_3 (~3.0σ),intent_sensor_drift,0.9931536912918091,no
+2025-09-20T10:16:44.075533,RUL divergence: model vs baseline differs by ~33h at cycle 287 · strongest sensor shift: s_13 (~2.0σ),intent_sensor_drift,0.9932370781898499,no
+2025-09-20T10:19:26.084353,⚠️ Temperature anomaly detected at cycle 31,intent_uncertain,0.5030806064605713,yes
+2025-09-20T10:19:26.127111,⚠️ Power anomaly detected at cycle 31,intent_wrong_scaling,0.7668352723121643,no
+2025-09-20T10:19:26.199003,⚠️ Vibration anomaly detected at cycle 31,intent_uncertain,0.6210988163948059,yes
+2025-09-20T10:19:26.374355,⚠️ Speed anomaly detected at cycle 31,intent_wrong_scaling,0.8108221888542175,no
+2025-09-20T10:30:27.609491,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-20T10:30:27.652304,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-20T10:30:27.684127,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-20T10:30:38.389117,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-20T11:24:00.312649,Why was this alert raised?,intent_uncertain,0.5247332453727722,yes
+2025-09-20T11:24:13.867337,What should I do first?,intent_uncertain,0.7498611211776733,yes
+2025-09-20T11:40:22.697414,How do I verify the fix worked?,intent_model_outdated,0.9348874688148499,no
+2025-09-20T13:06:57.994649,Which sensor is most suspicious?,intent_sensor_drift,0.994922935962677,no
+2025-09-20T13:37:25.048612,⚠️ Temperature anomaly detected at cycle 31,intent_uncertain,0.5030806064605713,yes
+2025-09-20T13:37:25.089566,⚠️ Power anomaly detected at cycle 31,intent_wrong_scaling,0.7668352723121643,no
+2025-09-20T13:37:25.120241,⚠️ Vibration anomaly detected at cycle 31,intent_uncertain,0.6210988163948059,yes
+2025-09-20T13:37:25.233679,⚠️ Speed anomaly detected at cycle 31,intent_wrong_scaling,0.8108221888542175,no
+2025-09-20T13:52:15.822954,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-20T13:52:15.924225,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-20T13:52:16.050241,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-20T13:52:25.045098,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-20T14:20:31.025034,⚠️ Temperature anomaly detected at cycle 31,intent_uncertain,0.5030806064605713,yes
+2025-09-20T14:20:31.079133,⚠️ Power anomaly detected at cycle 31,intent_wrong_scaling,0.7668352723121643,no
+2025-09-20T14:20:31.144844,⚠️ Vibration anomaly detected at cycle 31,intent_uncertain,0.6210988163948059,yes
+2025-09-20T14:20:31.435142,⚠️ Speed anomaly detected at cycle 31,intent_wrong_scaling,0.8108221888542175,no
+2025-09-20T14:20:42.055541,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-20T14:20:42.188279,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-20T14:20:42.428929,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-20T14:21:24.014051,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-20T14:22:45.182081,⚠️ Temperature anomaly detected at cycle 31,intent_uncertain,0.5030806064605713,yes
+2025-09-20T14:22:45.260317,⚠️ Power anomaly detected at cycle 31,intent_wrong_scaling,0.7668352723121643,no
+2025-09-20T14:22:45.916021,⚠️ Vibration anomaly detected at cycle 31,intent_uncertain,0.6210988163948059,yes
+2025-09-20T14:22:46.491982,⚠️ Speed anomaly detected at cycle 31,intent_wrong_scaling,0.8108221888542175,no
+2025-09-20T14:23:00.626770,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-20T14:23:00.863888,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-20T14:23:01.172630,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-20T14:23:35.254867,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-20T14:28:15.848549,⚠️ Temperature anomaly detected at cycle 31,intent_uncertain,0.5030806064605713,yes
+2025-09-20T14:28:15.848779,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-20T14:28:16.107861,⚠️ Power anomaly detected at cycle 31,intent_wrong_scaling,0.7668352723121643,no
+2025-09-20T14:28:16.149229,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-20T14:28:16.516529,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-20T14:28:16.541042,⚠️ Vibration anomaly detected at cycle 31,intent_uncertain,0.6210988163948059,yes
+2025-09-20T14:28:17.788113,⚠️ Speed anomaly detected at cycle 31,intent_wrong_scaling,0.8108221888542175,no
+2025-09-20T14:28:53.814223,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-20T14:32:34.400240,⚠️ Temperature anomaly detected at cycle 31,intent_uncertain,0.5030806064605713,yes
+2025-09-20T14:32:34.535519,⚠️ Power anomaly detected at cycle 31,intent_wrong_scaling,0.7668352723121643,no
+2025-09-20T14:32:34.741340,⚠️ Vibration anomaly detected at cycle 31,intent_uncertain,0.6210988163948059,yes
+2025-09-20T14:32:35.237236,⚠️ Speed anomaly detected at cycle 31,intent_wrong_scaling,0.8108221888542175,no
+2025-09-20T14:33:03.239368,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-20T14:33:03.302295,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-20T14:33:03.413323,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-20T14:33:34.677924,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-20T14:38:27.631384,⚠️ Temperature anomaly detected at cycle 31,intent_uncertain,0.5030806064605713,yes
+2025-09-20T14:38:27.740356,⚠️ Power anomaly detected at cycle 31,intent_wrong_scaling,0.7668352723121643,no
+2025-09-20T14:38:27.910872,⚠️ Vibration anomaly detected at cycle 31,intent_uncertain,0.6210988163948059,yes
+2025-09-20T14:38:28.210614,⚠️ Speed anomaly detected at cycle 31,intent_wrong_scaling,0.8108221888542175,no
+2025-09-20T14:39:07.343455,⚠️ Temperature anomaly detected at cycle 31,intent_uncertain,0.5030806064605713,yes
+2025-09-20T14:39:07.402806,⚠️ Power anomaly detected at cycle 31,intent_wrong_scaling,0.7668352723121643,no
+2025-09-20T14:39:07.528234,⚠️ Vibration anomaly detected at cycle 31,intent_uncertain,0.6210988163948059,yes
+2025-09-20T14:39:07.850438,⚠️ Speed anomaly detected at cycle 31,intent_wrong_scaling,0.8108221888542175,no
+2025-09-20T14:39:43.712088,⚠️ Temperature anomaly detected at cycle 31,intent_uncertain,0.5030806064605713,yes
+2025-09-20T14:39:43.783679,⚠️ Power anomaly detected at cycle 31,intent_wrong_scaling,0.7668352723121643,no
+2025-09-20T14:39:43.888036,⚠️ Vibration anomaly detected at cycle 31,intent_uncertain,0.6210988163948059,yes
+2025-09-20T14:39:44.130043,⚠️ Speed anomaly detected at cycle 31,intent_wrong_scaling,0.8108221888542175,no
+2025-09-20T14:40:38.226984,⚠️ Temperature anomaly detected at cycle 31,intent_uncertain,0.5030806064605713,yes
+2025-09-20T14:40:38.226923,⚠️ Temperature fluctuation detected,intent_wrong_scaling,0.8163829445838928,no
+2025-09-20T14:40:38.390894,⚠️ Power anomaly detected at cycle 31,intent_wrong_scaling,0.7668352723121643,no
+2025-09-20T14:40:38.648363,⚠️ Vibration anomaly detected,intent_sensor_drift,0.7785537242889404,no
+2025-09-20T14:40:38.932183,⚠️ Vibration anomaly detected at cycle 31,intent_uncertain,0.6210988163948059,yes
+2025-09-20T14:40:38.943475,⚠️ Power outside normal operating range,intent_uncertain,0.5096677541732788,yes
+2025-09-20T14:40:39.761399,⚠️ Speed anomaly detected at cycle 31,intent_wrong_scaling,0.8108221888542175,no
+2025-09-20T14:41:14.820653,⚠️ Unusual speed detected,intent_wrong_scaling,0.8396288156509399,no
+2025-09-20T14:50:59.582663,⚠️ Temperature anomaly detected at cycle 192,intent_uncertain,0.6295239329338074,yes
+2025-09-20T14:50:59.582590,⚠️ Temperature anomaly detected at cycle 31,intent_uncertain,0.5030806064605713,yes
+2025-09-20T14:50:59.674932,⚠️ Vibration anomaly detected at cycle 192,intent_uncertain,0.4877118170261383,yes
+2025-09-20T14:50:59.676832,⚠️ Power anomaly detected at cycle 31,intent_wrong_scaling,0.7668352723121643,no
+2025-09-20T14:51:00.571267,⚠️ Power anomaly detected at cycle 192,intent_wrong_scaling,0.8470852375030518,no
+2025-09-20T14:51:00.607164,⚠️ Vibration anomaly detected at cycle 31,intent_uncertain,0.6210988163948059,yes
+2025-09-20T14:51:00.805559,⚠️ Speed anomaly detected at cycle 192,intent_wrong_scaling,0.7917883992195129,no
+2025-09-20T14:51:01.252715,⚠️ Temperature anomaly detected at cycle 287,intent_uncertain,0.5851529836654663,yes
+2025-09-20T14:51:01.370466,⚠️ Vibration anomaly detected at cycle 287,intent_uncertain,0.5949533581733704,yes
+2025-09-20T14:51:01.463270,⚠️ Speed anomaly detected at cycle 31,intent_wrong_scaling,0.8108221888542175,no
+2025-09-20T14:51:01.610634,⚠️ Power anomaly detected at cycle 287,intent_wrong_scaling,0.8020828366279602,no
+2025-09-20T14:51:01.875164,⚠️ Speed anomaly detected at cycle 287,intent_wrong_scaling,0.8126457929611206,no
+2025-09-20T14:51:02.112123,⚠️ Vibration anomaly detected at cycle 179,intent_uncertain,0.5345884561538696,yes
+2025-09-20T14:51:02.292006,⚠️ Power anomaly detected at cycle 179,intent_wrong_scaling,0.7988279461860657,no
+2025-09-20T14:51:02.543467,⚠️ Speed anomaly detected at cycle 179,intent_wrong_scaling,0.7601827383041382,no
+2025-09-20T14:51:02.821051,⚠️ Temperature anomaly detected at cycle 189,intent_uncertain,0.5387138724327087,yes
+2025-09-20T14:51:03.087388,⚠️ Vibration anomaly detected at cycle 189,intent_uncertain,0.6068766713142395,yes
+2025-09-20T14:51:03.380071,⚠️ Power anomaly detected at cycle 189,intent_uncertain,0.747976541519165,yes
+2025-09-20T14:51:04.195614,⚠️ Speed anomaly detected at cycle 189,intent_uncertain,0.6386990547180176,yes
+2025-09-20T14:51:04.515626,⚠️ Power anomaly detected at cycle 269,intent_wrong_scaling,0.867590069770813,no
+2025-09-20T14:51:04.809365,⚠️ Speed anomaly detected at cycle 269,intent_wrong_scaling,0.860487163066864,no
+2025-09-20T14:51:05.025848,⚠️ Power anomaly detected at cycle 188,intent_wrong_scaling,0.7993268370628357,no
+2025-09-20T14:51:05.186658,⚠️ Speed anomaly detected at cycle 188,intent_uncertain,0.716789960861206,yes
+2025-09-20T14:51:05.425092,⚠️ Temperature anomaly detected at cycle 259,intent_uncertain,0.6685009002685547,yes
+2025-09-20T14:51:05.566055,⚠️ Power anomaly detected at cycle 259,intent_wrong_scaling,0.8575066924095154,no
+2025-09-20T14:51:05.846954,⚠️ Temperature anomaly detected at cycle 150,intent_uncertain,0.5343049764633179,yes
+2025-09-20T14:51:05.972699,⚠️ Vibration anomaly detected at cycle 150,intent_uncertain,0.6474450826644897,yes
+2025-09-20T14:51:06.119927,⚠️ Power anomaly detected at cycle 150,intent_wrong_scaling,0.7547343373298645,no
+2025-09-20T14:51:06.251625,⚠️ Speed anomaly detected at cycle 150,intent_wrong_scaling,0.7714520692825317,no
+2025-09-20T14:51:06.424548,⚠️ Temperature anomaly detected at cycle 201,intent_uncertain,0.5718916058540344,yes
+2025-09-20T14:51:06.564055,⚠️ Power anomaly detected at cycle 201,intent_uncertain,0.7488205432891846,yes
+2025-09-20T14:51:06.813290,⚠️ Speed anomaly detected at cycle 201,intent_uncertain,0.5885936617851257,yes
+2025-09-20T14:51:06.963080,⚠️ Temperature anomaly detected at cycle 222,intent_uncertain,0.6561325788497925,yes
+2025-09-20T14:51:07.134321,⚠️ Power anomaly detected at cycle 222,intent_wrong_scaling,0.8377302289009094,no
+2025-09-20T14:51:07.304111,⚠️ Temperature anomaly detected at cycle 240,intent_uncertain,0.598493218421936,yes
+2025-09-20T14:51:07.566906,⚠️ Power anomaly detected at cycle 240,intent_wrong_scaling,0.7939574122428894,no
+2025-09-20T14:51:07.715872,⚠️ Speed anomaly detected at cycle 240,intent_wrong_scaling,0.818997323513031,no
+2025-09-20T14:51:07.885915,⚠️ Vibration anomaly detected at cycle 170,intent_uncertain,0.6026661992073059,yes
+2025-09-20T14:51:08.025417,⚠️ Power anomaly detected at cycle 170,intent_wrong_scaling,0.7874778509140015,no
+2025-09-20T14:51:08.247866,⚠️ Speed anomaly detected at cycle 170,intent_wrong_scaling,0.7707230448722839,no
+2025-09-20T14:51:08.637645,⚠️ Temperature anomaly detected at cycle 163,intent_uncertain,0.7010964751243591,yes
+2025-09-20T14:51:08.780955,⚠️ Vibration anomaly detected at cycle 163,intent_uncertain,0.5174590945243835,yes
+2025-09-20T14:51:09.022301,⚠️ Power anomaly detected at cycle 163,intent_wrong_scaling,0.8646578788757324,no
+2025-09-20T14:51:09.875750,⚠️ Speed anomaly detected at cycle 163,intent_wrong_scaling,0.8214312791824341,no
+2025-09-20T14:51:10.275501,⚠️ Power anomaly detected at cycle 180,intent_wrong_scaling,0.8136502504348755,no
+2025-09-20T14:51:10.651009,⚠️ Speed anomaly detected at cycle 180,intent_wrong_scaling,0.8484623432159424,no
+2025-09-20T14:51:10.965177,⚠️ Temperature anomaly detected at cycle 207,intent_uncertain,0.4802823066711426,yes
+2025-09-20T14:51:11.313960,⚠️ Power anomaly detected at cycle 207,intent_uncertain,0.7145581245422363,yes
+2025-09-20T14:51:11.642581,⚠️ Speed anomaly detected at cycle 207,intent_uncertain,0.7357635498046875,yes
+2025-09-20T14:51:11.860114,⚠️ Power anomaly detected at cycle 209,intent_uncertain,0.6880285143852234,yes
+2025-09-20T14:51:12.046049,⚠️ Speed anomaly detected at cycle 209,intent_uncertain,0.7121065258979797,yes
+2025-09-20T14:51:12.299538,⚠️ Temperature anomaly detected at cycle 276,intent_uncertain,0.6803882122039795,yes
+2025-09-20T14:51:12.488548,⚠️ Power anomaly detected at cycle 276,intent_wrong_scaling,0.8403234481811523,no
+2025-09-20T14:51:12.704360,⚠️ Speed anomaly detected at cycle 276,intent_wrong_scaling,0.8472117781639099,no
+2025-09-20T14:51:12.916908,⚠️ Temperature anomaly detected at cycle 195,intent_uncertain,0.627454936504364,yes
+2025-09-20T14:51:13.078244,⚠️ Power anomaly detected at cycle 195,intent_wrong_scaling,0.8125900626182556,no
+2025-09-20T14:51:13.845446,⚠️ Speed anomaly detected at cycle 195,intent_wrong_scaling,0.7566232085227966,no
+2025-09-20T14:51:14.127189,⚠️ Vibration anomaly detected at cycle 158,intent_uncertain,0.5193729996681213,yes
+2025-09-20T14:51:14.498323,⚠️ Power anomaly detected at cycle 158,intent_wrong_scaling,0.8733714818954468,no
+2025-09-20T14:51:14.667478,⚠️ Speed anomaly detected at cycle 158,intent_wrong_scaling,0.8187134265899658,no
+2025-09-20T14:51:14.861337,⚠️ Temperature anomaly detected at cycle 234,intent_uncertain,0.6391710042953491,yes
+2025-09-20T14:51:15.207823,⚠️ Power anomaly detected at cycle 234,intent_wrong_scaling,0.8508829474449158,no
+2025-09-20T14:51:15.571888,⚠️ Vibration anomaly detected at cycle 195,intent_uncertain,0.5400546193122864,yes
+2025-09-20T14:51:16.013473,⚠️ Vibration anomaly detected at cycle 202,intent_uncertain,0.6785010695457458,yes
+2025-09-20T14:51:16.152982,⚠️ Power anomaly detected at cycle 202,intent_uncertain,0.6461853384971619,yes
+2025-09-20T14:51:16.244026,⚠️ Speed anomaly detected at cycle 202,intent_uncertain,0.5846363306045532,yes
+2025-09-20T14:51:16.336746,⚠️ Vibration anomaly detected at cycle 168,intent_uncertain,0.5581628084182739,yes
+2025-09-20T14:51:16.406735,⚠️ Power anomaly detected at cycle 168,intent_wrong_scaling,0.8579426407814026,no
+2025-09-20T14:51:16.478493,⚠️ Speed anomaly detected at cycle 168,intent_wrong_scaling,0.8121993541717529,no
+2025-09-20T14:51:16.579920,⚠️ Temperature anomaly detected at cycle 147,intent_uncertain,0.6291285753250122,yes
+2025-09-20T14:51:16.663146,⚠️ Vibration anomaly detected at cycle 147,intent_uncertain,0.4906904399394989,yes
+2025-09-20T14:51:16.795220,⚠️ Power anomaly detected at cycle 147,intent_wrong_scaling,0.823636531829834,no
+2025-09-20T14:51:16.888052,⚠️ Speed anomaly detected at cycle 147,intent_uncertain,0.6728824377059937,yes
+2025-09-20T14:51:17.001367,⚠️ Temperature anomaly detected at cycle 230,intent_uncertain,0.495947927236557,yes
+2025-09-20T14:51:17.060498,⚠️ Vibration anomaly detected at cycle 230,intent_uncertain,0.6481941938400269,yes
+2025-09-20T14:51:17.127066,⚠️ Power anomaly detected at cycle 230,intent_uncertain,0.7335206270217896,yes
+2025-09-20T14:51:17.204953,⚠️ Power anomaly detected at cycle 199,intent_wrong_scaling,0.818796694278717,no
+2025-09-20T14:51:17.286625,⚠️ Speed anomaly detected at cycle 199,intent_uncertain,0.6458866596221924,yes
+2025-09-20T14:51:18.017311,⚠️ Temperature anomaly detected at cycle 156,intent_uncertain,0.632784366607666,yes
+2025-09-20T14:51:18.373493,⚠️ Vibration anomaly detected at cycle 156,intent_uncertain,0.5269403457641602,yes
+2025-09-20T14:51:18.506457,⚠️ Power anomaly detected at cycle 156,intent_wrong_scaling,0.8440846800804138,no
+2025-09-20T14:51:18.637618,⚠️ Speed anomaly detected at cycle 156,intent_wrong_scaling,0.771287202835083,no
+2025-09-20T14:51:18.755091,⚠️ Temperature anomaly detected at cycle 165,intent_uncertain,0.6268552541732788,yes
+2025-09-20T14:51:18.861941,⚠️ Vibration anomaly detected at cycle 165,intent_uncertain,0.5515846610069275,yes
+2025-09-20T14:51:18.997646,⚠️ Power anomaly detected at cycle 165,intent_wrong_scaling,0.8193185925483704,no
+2025-09-20T14:51:19.113601,⚠️ Speed anomaly detected at cycle 165,intent_wrong_scaling,0.8166394829750061,no
+2025-09-20T14:51:19.450135,Rapid RUL decrease (~17h over last ~5 points),intent_overestimate_rul,0.9189938306808472,no
+2025-09-20T14:51:19.561183,⚠️ Vibration anomaly detected at cycle 194,intent_uncertain,0.5577307343482971,yes
+2025-09-20T14:51:19.653047,⚠️ Power anomaly detected at cycle 194,intent_wrong_scaling,0.7995457649230957,no
+2025-09-20T14:51:19.749584,⚠️ Speed anomaly detected at cycle 194,intent_wrong_scaling,0.7552840113639832,no
+2025-09-20T14:51:20.271209,⚠️ Speed anomaly detected at cycle 234,intent_wrong_scaling,0.8322935700416565,no
+2025-09-20T14:51:20.413169,⚠️ Vibration anomaly detected at cycle 191,intent_uncertain,0.5343377590179443,yes
+2025-09-20T14:51:20.536294,⚠️ Power anomaly detected at cycle 191,intent_wrong_scaling,0.7760546207427979,no
+2025-09-20T14:51:20.638696,⚠️ Temperature anomaly detected at cycle 200,intent_uncertain,0.5614362955093384,yes
+2025-09-20T14:51:20.774974,⚠️ Vibration anomaly detected at cycle 200,intent_uncertain,0.6034610271453857,yes
+2025-09-20T14:51:20.892883,⚠️ Power anomaly detected at cycle 200,intent_wrong_scaling,0.7684717774391174,no
+2025-09-20T14:51:22.568923,⚠️ Speed anomaly detected at cycle 200,intent_wrong_scaling,0.7564810514450073,no
+2025-09-20T14:51:23.039188,⚠️ Temperature anomaly detected at cycle 181,intent_uncertain,0.6284406781196594,yes
+2025-09-20T14:51:23.176809,⚠️ Power anomaly detected at cycle 181,intent_wrong_scaling,0.7983124256134033,no
+2025-09-20T14:51:23.288244,⚠️ Speed anomaly detected at cycle 181,intent_uncertain,0.7372498512268066,yes
+2025-09-20T14:51:23.623026,⚠️ Temperature anomaly detected at cycle 170,intent_uncertain,0.5852753520011902,yes
+2025-09-20T14:51:23.885593,⚠️ Temperature anomaly detected at cycle 194,intent_uncertain,0.5908496379852295,yes
+2025-09-20T14:51:24.161047,⚠️ Vibration anomaly detected at cycle 128,intent_uncertain,0.49368518590927124,yes
+2025-09-20T14:51:24.210315,⚠️ Speed anomaly detected at cycle 128,intent_wrong_scaling,0.7798897624015808,no
+2025-09-20T14:51:24.285766,⚠️ Temperature anomaly detected at cycle 188,intent_uncertain,0.6113600134849548,yes
+2025-09-20T14:51:24.353980,⚠️ Vibration anomaly detected at cycle 188,intent_uncertain,0.5454163551330566,yes
+2025-09-20T14:51:24.705417,⚠️ Temperature anomaly detected at cycle 216,intent_uncertain,0.5568411946296692,yes
+2025-09-20T14:51:24.836563,⚠️ Vibration anomaly detected at cycle 216,intent_uncertain,0.56741863489151,yes
+2025-09-20T14:51:24.921684,⚠️ Power anomaly detected at cycle 216,intent_wrong_scaling,0.8037157654762268,no
+2025-09-20T14:51:25.013932,⚠️ Speed anomaly detected at cycle 216,intent_wrong_scaling,0.776928722858429,no
+2025-09-20T14:51:25.104718,⚠️ Power anomaly detected at cycle 196,intent_wrong_scaling,0.8487407565116882,no
+2025-09-20T14:51:25.162635,⚠️ Speed anomaly detected at cycle 196,intent_wrong_scaling,0.822995126247406,no
+2025-09-20T14:51:25.313417,⚠️ Vibration anomaly detected at cycle 207,intent_uncertain,0.6818633675575256,yes
+2025-09-20T14:51:25.954018,⚠️ Temperature anomaly detected at cycle 158,intent_uncertain,0.7030092477798462,yes
+2025-09-20T14:51:26.184301,⚠️ Temperature anomaly detected at cycle 256,intent_wrong_scaling,0.8429074287414551,no
+2025-09-20T14:51:26.266311,⚠️ Vibration anomaly detected at cycle 256,intent_uncertain,0.7059457898139954,yes
+2025-09-20T14:51:26.330243,⚠️ Power anomaly detected at cycle 256,intent_wrong_scaling,0.9374386668205261,no
+2025-09-20T14:51:26.419079,⚠️ Speed anomaly detected at cycle 256,intent_wrong_scaling,0.8619805574417114,no
+2025-09-20T14:51:26.493521,⚠️ Temperature anomaly detected at cycle 214,intent_uncertain,0.4717252552509308,yes
+2025-09-20T14:51:26.578176,⚠️ Vibration anomaly detected at cycle 214,intent_uncertain,0.6040583252906799,yes
+2025-09-20T14:51:26.670724,⚠️ Power anomaly detected at cycle 214,intent_uncertain,0.657241940498352,yes
+2025-09-20T14:51:26.747021,⚠️ Speed anomaly detected at cycle 214,intent_uncertain,0.5041630864143372,yes
+2025-09-20T14:51:26.815797,⚠️ Temperature anomaly detected at cycle 231,intent_uncertain,0.5779606103897095,yes
+2025-09-20T14:51:26.886964,⚠️ Vibration anomaly detected at cycle 231,intent_uncertain,0.54564368724823,yes
+2025-09-20T14:51:26.951930,⚠️ Power anomaly detected at cycle 231,intent_wrong_scaling,0.8129976987838745,no
+2025-09-20T14:51:27.018408,⚠️ Speed anomaly detected at cycle 231,intent_wrong_scaling,0.7807161211967468,no
+2025-09-20T14:51:27.108927,⚠️ Temperature anomaly detected at cycle 215,intent_uncertain,0.492024302482605,yes
+2025-09-20T14:51:27.176373,⚠️ Power anomaly detected at cycle 215,intent_uncertain,0.7139240503311157,yes
+2025-09-20T14:51:27.242318,⚠️ Speed anomaly detected at cycle 215,intent_wrong_scaling,0.7550897002220154,no
+2025-09-20T14:51:27.345564,⚠️ Temperature anomaly detected at cycle 198,intent_uncertain,0.6447585225105286,yes
+2025-09-20T14:51:27.433242,⚠️ Vibration anomaly detected at cycle 198,intent_uncertain,0.5058500170707703,yes
+2025-09-20T14:51:27.484508,⚠️ Power anomaly detected at cycle 198,intent_wrong_scaling,0.8133288025856018,no
+2025-09-20T14:51:27.537836,⚠️ Temperature anomaly detected at cycle 213,intent_uncertain,0.5768488645553589,yes
+2025-09-20T14:51:27.580120,⚠️ Vibration anomaly detected at cycle 213,intent_uncertain,0.5762596130371094,yes
+2025-09-20T14:51:27.617816,⚠️ Power anomaly detected at cycle 213,intent_wrong_scaling,0.759827196598053,no
+2025-09-20T14:51:27.652626,⚠️ Speed anomaly detected at cycle 213,intent_uncertain,0.7108495235443115,yes
+2025-09-20T14:51:27.857363,⚠️ Temperature anomaly detected at cycle 257,intent_uncertain,0.7449943423271179,yes
+2025-09-20T14:51:27.893460,⚠️ Vibration anomaly detected at cycle 257,intent_uncertain,0.5193392634391785,yes
+2025-09-20T14:51:27.928939,⚠️ Power anomaly detected at cycle 257,intent_wrong_scaling,0.9051533341407776,no
+2025-09-20T14:51:27.963764,⚠️ Speed anomaly detected at cycle 257,intent_wrong_scaling,0.8740230202674866,no
+2025-09-20T14:51:28.008146,⚠️ Temperature anomaly detected at cycle 193,intent_uncertain,0.6058333516120911,yes
+2025-09-20T14:51:28.047716,⚠️ Vibration anomaly detected at cycle 193,intent_uncertain,0.5013644695281982,yes
+2025-09-20T14:51:28.082618,⚠️ Power anomaly detected at cycle 193,intent_wrong_scaling,0.8176264762878418,no
+2025-09-20T14:51:28.118214,⚠️ Speed anomaly detected at cycle 193,intent_wrong_scaling,0.7696837186813354,no
+2025-09-20T14:51:28.159127,⚠️ Temperature anomaly detected at cycle 275,intent_uncertain,0.5631207227706909,yes
+2025-09-20T14:51:28.193411,⚠️ Power anomaly detected at cycle 275,intent_wrong_scaling,0.7910415530204773,no
+2025-09-20T14:51:28.236689,⚠️ Speed anomaly detected at cycle 275,intent_uncertain,0.7267988920211792,yes
+2025-09-20T14:51:28.277350,⚠️ Temperature anomaly detected at cycle 137,intent_uncertain,0.6193663477897644,yes
+2025-09-20T14:51:28.310074,⚠️ Power anomaly detected at cycle 137,intent_wrong_scaling,0.8225307464599609,no
+2025-09-20T14:51:28.643163,⚠️ Speed anomaly detected at cycle 137,intent_wrong_scaling,0.8101128935813904,no
+2025-09-20T14:51:29.055180,⚠️ Temperature anomaly detected at cycle 172,intent_uncertain,0.7049283385276794,yes
+2025-09-20T14:51:29.090013,⚠️ Vibration anomaly detected at cycle 172,intent_uncertain,0.5119273066520691,yes
+2025-09-20T14:51:29.126021,⚠️ Power anomaly detected at cycle 172,intent_wrong_scaling,0.8444792032241821,no
+2025-09-20T14:51:29.157395,⚠️ Speed anomaly detected at cycle 172,intent_wrong_scaling,0.7826220393180847,no
+2025-09-20T14:51:29.200067,⚠️ Vibration anomaly detected at cycle 185,intent_uncertain,0.5943778157234192,yes
+2025-09-20T14:51:29.237009,⚠️ Power anomaly detected at cycle 185,intent_uncertain,0.7483367323875427,yes
+2025-09-20T14:51:29.276860,⚠️ Speed anomaly detected at cycle 185,intent_uncertain,0.677452564239502,yes
+2025-09-20T14:51:29.393270,⚠️ Temperature anomaly detected at cycle 174,intent_uncertain,0.6770116686820984,yes
+2025-09-20T14:51:29.432517,⚠️ Vibration anomaly detected at cycle 174,intent_uncertain,0.48582595586776733,yes
+2025-09-20T14:51:29.468694,⚠️ Power anomaly detected at cycle 174,intent_wrong_scaling,0.8497750759124756,no
+2025-09-20T14:51:29.505974,⚠️ Speed anomaly detected at cycle 174,intent_wrong_scaling,0.8238409161567688,no
+2025-09-20T14:51:29.544768,⚠️ Temperature anomaly detected at cycle 283,intent_uncertain,0.6456112265586853,yes
+2025-09-20T14:51:29.581512,⚠️ Vibration anomaly detected at cycle 283,intent_uncertain,0.49894335865974426,yes
+2025-09-20T14:51:29.617617,⚠️ Speed anomaly detected at cycle 283,intent_wrong_scaling,0.7785215377807617,no
+2025-09-20T14:51:29.655563,⚠️ Temperature anomaly detected at cycle 153,intent_uncertain,0.6088871359825134,yes
+2025-09-20T14:51:29.690005,⚠️ Power anomaly detected at cycle 153,intent_wrong_scaling,0.8272560238838196,no
+2025-09-20T14:51:29.723996,⚠️ Speed anomaly detected at cycle 153,intent_wrong_scaling,0.7871320843696594,no
+2025-09-20T14:51:29.761796,⚠️ Temperature anomaly detected at cycle 202,intent_uncertain,0.546193540096283,yes
+2025-09-20T14:51:29.917788,⚠️ Speed anomaly detected at cycle 313,intent_wrong_scaling,0.7945601940155029,no
+2025-09-20T14:51:29.958559,⚠️ Temperature anomaly detected at cycle 199,intent_uncertain,0.6376421451568604,yes
+2025-09-20T14:51:29.993465,⚠️ Vibration anomaly detected at cycle 199,intent_uncertain,0.5041124820709229,yes
+2025-09-20T14:51:30.106146,⚠️ Temperature anomaly detected at cycle 362,intent_uncertain,0.5100396275520325,yes
+2025-09-20T14:51:30.167000,⚠️ Power anomaly detected at cycle 362,intent_wrong_scaling,0.7687985301017761,no
+2025-09-20T14:51:30.220692,⚠️ Speed anomaly detected at cycle 362,intent_uncertain,0.691804826259613,yes
+2025-09-20T14:51:30.286498,⚠️ Vibration anomaly detected at cycle 137,intent_uncertain,0.5152138471603394,yes
+2025-09-20T14:51:30.494023,⚠️ Temperature anomaly detected at cycle 208,intent_uncertain,0.5371228456497192,yes
+2025-09-20T14:51:30.649981,⚠️ Power anomaly detected at cycle 208,intent_uncertain,0.7464762330055237,yes
+2025-09-20T14:51:30.760090,⚠️ Speed anomaly detected at cycle 208,intent_wrong_scaling,0.7546930313110352,no
+2025-09-20T14:51:31.152090,⚠️ Vibration anomaly detected at cycle 166,intent_uncertain,0.5915761590003967,yes
+2025-09-20T14:51:31.251238,⚠️ Power anomaly detected at cycle 166,intent_wrong_scaling,0.7896060943603516,no
+2025-09-20T14:51:31.311477,⚠️ Speed anomaly detected at cycle 166,intent_uncertain,0.7449318766593933,yes
+2025-09-20T14:51:31.394585,⚠️ Temperature anomaly detected at cycle 229,intent_uncertain,0.5390620231628418,yes
+2025-09-20T14:51:31.496547,⚠️ Vibration anomaly detected at cycle 229,intent_uncertain,0.58379065990448,yes
+2025-09-20T14:51:31.612338,⚠️ Power anomaly detected at cycle 229,intent_wrong_scaling,0.7847902178764343,no
+2025-09-20T14:51:31.691757,⚠️ Temperature anomaly detected at cycle 210,intent_uncertain,0.5043801665306091,yes
+2025-09-20T14:51:31.791899,⚠️ Power anomaly detected at cycle 210,intent_uncertain,0.6421953439712524,yes
+2025-09-20T14:51:31.894553,⚠️ Speed anomaly detected at cycle 210,intent_wrong_scaling,0.757377028465271,no
+2025-09-20T14:51:32.320803,⚠️ Temperature anomaly detected at cycle 185,intent_uncertain,0.5605548024177551,yes
+2025-09-20T14:51:32.714882,Rapid RUL decrease (~21h over last ~5 points),intent_overestimate_rul,0.9197058081626892,no
+2025-09-20T14:51:33.098881,⚠️ Temperature anomaly detected at cycle 293,intent_uncertain,0.5620929002761841,yes
+2025-09-20T14:51:33.151465,⚠️ Vibration anomaly detected at cycle 293,intent_uncertain,0.6128143668174744,yes
+2025-09-20T14:51:33.210797,⚠️ Power anomaly detected at cycle 293,intent_wrong_scaling,0.7788217663764954,no
+2025-09-20T14:51:33.294342,⚠️ Speed anomaly detected at cycle 293,intent_wrong_scaling,0.8007805347442627,no
+2025-09-20T14:51:33.385635,⚠️ Temperature anomaly detected at cycle 267,intent_uncertain,0.6704616546630859,yes
+2025-09-20T14:51:33.794397,⚠️ Vibration anomaly detected at cycle 267,intent_uncertain,0.5265793204307556,yes
+2025-09-20T14:51:33.893229,⚠️ Power anomaly detected at cycle 267,intent_wrong_scaling,0.8638070225715637,no
+2025-09-20T14:51:34.020180,⚠️ Speed anomaly detected at cycle 267,intent_wrong_scaling,0.8171887993812561,no
+2025-09-20T14:51:34.500217,⚠️ Speed anomaly detected at cycle 278,intent_wrong_scaling,0.827742338180542,no
+2025-09-20T14:51:34.616618,⚠️ Power anomaly detected at cycle 178,intent_wrong_scaling,0.7675195336341858,no
+2025-09-20T14:51:34.693155,⚠️ Speed anomaly detected at cycle 178,intent_uncertain,0.7252326011657715,yes
+2025-09-20T14:51:35.094891,⚠️ Vibration anomaly detected at cycle 217,intent_uncertain,0.5681960582733154,yes
+2025-09-20T14:51:35.159433,⚠️ Power anomaly detected at cycle 217,intent_wrong_scaling,0.7826357483863831,no
+2025-09-20T14:51:35.211940,⚠️ Speed anomaly detected at cycle 217,intent_uncertain,0.7275241017341614,yes
+2025-09-20T14:51:35.293843,⚠️ Temperature anomaly detected at cycle 154,intent_uncertain,0.5640632510185242,yes
+2025-09-20T14:51:35.360798,⚠️ Vibration anomaly detected at cycle 154,intent_uncertain,0.6035357117652893,yes
+2025-09-20T14:51:35.459684,⚠️ Power anomaly detected at cycle 154,intent_wrong_scaling,0.7882862687110901,no
+2025-09-20T14:51:35.578152,⚠️ Speed anomaly detected at cycle 154,intent_wrong_scaling,0.7719922065734863,no
+2025-09-20T14:51:35.645470,⚠️ Temperature anomaly detected at cycle 135,intent_uncertain,0.5748329758644104,yes
+2025-09-20T14:51:35.687151,⚠️ Vibration anomaly detected at cycle 135,intent_uncertain,0.6334709525108337,yes
+2025-09-20T14:51:35.732695,⚠️ Power anomaly detected at cycle 135,intent_uncertain,0.7371811270713806,yes
+2025-09-20T14:51:35.773345,⚠️ Speed anomaly detected at cycle 135,intent_wrong_scaling,0.7845163345336914,no
+2025-09-20T14:51:35.815772,⚠️ Temperature anomaly detected at cycle 341,intent_uncertain,0.6602268218994141,yes
+2025-09-20T14:51:35.853806,⚠️ Vibration anomaly detected at cycle 341,intent_uncertain,0.4939696192741394,yes
+2025-09-20T14:51:35.894016,⚠️ Power anomaly detected at cycle 341,intent_wrong_scaling,0.8673648238182068,no
+2025-09-20T14:51:35.936227,⚠️ Speed anomaly detected at cycle 341,intent_wrong_scaling,0.8263208270072937,no
+2025-09-20T14:51:35.984440,⚠️ Vibration anomaly detected at cycle 155,intent_uncertain,0.6321420669555664,yes
+2025-09-20T14:51:36.020522,⚠️ Power anomaly detected at cycle 155,intent_wrong_scaling,0.7697152495384216,no
+2025-09-20T14:51:36.059054,⚠️ Speed anomaly detected at cycle 155,intent_wrong_scaling,0.7851360440254211,no
+2025-09-20T14:51:36.101455,⚠️ Temperature anomaly detected at cycle 258,intent_uncertain,0.6890939474105835,yes
+2025-09-20T14:51:36.138782,⚠️ Speed anomaly detected at cycle 258,intent_wrong_scaling,0.8289511799812317,no
+2025-09-20T14:51:36.223146,⚠️ Power anomaly detected at cycle 283,intent_wrong_scaling,0.8533851504325867,no
+2025-09-20T14:51:36.307389,⚠️ Temperature anomaly detected at cycle 336,intent_uncertain,0.5685229301452637,yes
+2025-09-20T14:51:36.344086,⚠️ Power anomaly detected at cycle 336,intent_wrong_scaling,0.7937709093093872,no
+2025-09-20T14:51:36.385383,⚠️ Speed anomaly detected at cycle 336,intent_wrong_scaling,0.8097753524780273,no
+2025-09-20T14:51:37.119930,⚠️ Vibration anomaly detected at cycle 240,intent_uncertain,0.5691839456558228,yes
+2025-09-20T14:56:26.450696,⚠️ Temperature anomaly detected at cycle 31,intent_uncertain,0.5030806064605713,yes
+2025-09-20T14:56:26.543441,⚠️ Power anomaly detected at cycle 31,intent_wrong_scaling,0.7668352723121643,no
+2025-09-20T14:56:26.751275,⚠️ Vibration anomaly detected at cycle 31,intent_uncertain,0.6210988163948059,yes
+2025-09-20T14:56:27.273373,⚠️ Speed anomaly detected at cycle 31,intent_wrong_scaling,0.8108221888542175,no
+2025-09-20T14:56:36.892601,⚠️ Temperature anomaly detected at cycle 1,intent_uncertain,0.6526626944541931,yes
+2025-09-20T14:56:37.667766,⚠️ Power anomaly detected at cycle 1,intent_wrong_scaling,0.8522481918334961,no
+2025-09-20T14:56:38.177623,⚠️ Vibration anomaly detected at cycle 1,intent_uncertain,0.5436733365058899,yes
+2025-09-20T14:56:39.722676,⚠️ Speed anomaly detected at cycle 1,intent_wrong_scaling,0.8629751801490784,no
+2025-09-20T15:00:09.434702,⚠️ Temperature anomaly detected at cycle 31,intent_uncertain,0.5030806064605713,yes
+2025-09-20T15:00:09.505956,⚠️ Power anomaly detected at cycle 31,intent_wrong_scaling,0.7668352723121643,no
+2025-09-20T15:00:09.655777,⚠️ Vibration anomaly detected at cycle 31,intent_uncertain,0.6210988163948059,yes
+2025-09-20T15:00:10.047847,⚠️ Speed anomaly detected at cycle 31,intent_wrong_scaling,0.8108221888542175,no
+2025-09-20T15:00:15.239417,⚠️ Temperature anomaly detected at cycle 1,intent_uncertain,0.6526626944541931,yes
+2025-09-20T15:00:15.472146,⚠️ Power anomaly detected at cycle 1,intent_wrong_scaling,0.8522481918334961,no
+2025-09-20T15:00:15.784699,⚠️ Vibration anomaly detected at cycle 1,intent_uncertain,0.5436733365058899,yes
+2025-09-20T15:00:17.401988,⚠️ Speed anomaly detected at cycle 1,intent_wrong_scaling,0.8629751801490784,no
+2025-09-20T15:01:25.310688,⚠️ High temperature (above recent range),intent_sensor_drift,0.8243627548217773,no
+2025-09-20T15:01:25.346124,⚠️ High vibration (above recent range),intent_sensor_drift,0.757062554359436,no
+2025-09-20T15:01:25.370982,⚠️ High power consumption (above recent range),intent_uncertain,0.6060487031936646,yes
+2025-09-20T15:03:39.877951,⚠️ High temperature (above recent range),intent_sensor_drift,0.8243627548217773,no
+2025-09-20T15:03:39.912315,⚠️ High vibration (above recent range),intent_sensor_drift,0.757062554359436,no
+2025-09-20T15:03:39.938941,⚠️ High power consumption (above recent range),intent_uncertain,0.6060487031936646,yes
+2025-09-20T15:04:27.345193,⚠️ High temperature (above recent range),intent_sensor_drift,0.8243627548217773,no
+2025-09-20T15:04:27.399467,⚠️ High vibration (above recent range),intent_sensor_drift,0.757062554359436,no
+2025-09-20T15:04:27.438429,⚠️ High power consumption (above recent range),intent_uncertain,0.6060487031936646,yes
+2025-09-20T15:05:18.208424,⚠️ High temperature (above recent range),intent_sensor_drift,0.8243627548217773,no
+2025-09-20T15:05:18.319853,⚠️ High vibration (above recent range),intent_sensor_drift,0.757062554359436,no
+2025-09-20T15:05:18.521916,⚠️ High power consumption (above recent range),intent_uncertain,0.6060487031936646,yes
+2025-09-20T15:08:10.184519,⚠️ Temperature anomaly detected at cycle 31,intent_uncertain,0.5030806064605713,yes
+2025-09-20T15:08:10.298239,⚠️ Power anomaly detected at cycle 31,intent_wrong_scaling,0.7668352723121643,no
+2025-09-20T15:08:10.418959,⚠️ Vibration anomaly detected at cycle 31,intent_uncertain,0.6210988163948059,yes
+2025-09-20T15:08:11.090917,⚠️ Speed anomaly detected at cycle 31,intent_wrong_scaling,0.8108221888542175,no
+2025-09-20T15:08:13.605308,⚠️ Temperature anomaly detected at cycle 1,intent_uncertain,0.6526626944541931,yes
+2025-09-20T15:08:14.049100,⚠️ Power anomaly detected at cycle 1,intent_wrong_scaling,0.8522481918334961,no
+2025-09-20T15:08:14.335591,⚠️ Vibration anomaly detected at cycle 1,intent_uncertain,0.5436733365058899,yes
+2025-09-20T15:08:15.695043,⚠️ Speed anomaly detected at cycle 1,intent_wrong_scaling,0.8629751801490784,no
+2025-09-20T15:09:01.328968,⚠️ Temperature anomaly detected at cycle 31,intent_uncertain,0.5030806064605713,yes
+2025-09-20T15:09:01.508657,⚠️ Power anomaly detected at cycle 31,intent_wrong_scaling,0.7668352723121643,no
+2025-09-20T15:09:01.738562,⚠️ Vibration anomaly detected at cycle 31,intent_uncertain,0.6210988163948059,yes
+2025-09-20T15:09:01.892722,⚠️ Temperature anomaly detected at cycle 1,intent_uncertain,0.6526626944541931,yes
+2025-09-20T15:09:02.615934,⚠️ Power anomaly detected at cycle 1,intent_wrong_scaling,0.8522481918334961,no
+2025-09-20T15:09:02.876998,⚠️ Vibration anomaly detected at cycle 1,intent_uncertain,0.5436733365058899,yes
+2025-09-20T15:09:02.993250,⚠️ Speed anomaly detected at cycle 31,intent_wrong_scaling,0.8108221888542175,no
+2025-09-20T15:09:03.319382,⚠️ Speed anomaly detected at cycle 1,intent_wrong_scaling,0.8629751801490784,no
+2025-09-20T15:27:27.499089,⚠️ Temperature anomaly detected at cycle 31,intent_uncertain,0.5030806064605713,yes
+2025-09-20T15:27:27.499316,⚠️ Temperature anomaly detected at cycle 1,intent_uncertain,0.6526626944541931,yes
+2025-09-20T15:27:27.677626,⚠️ Power anomaly detected at cycle 31,intent_wrong_scaling,0.7668352723121643,no
+2025-09-20T15:27:27.677523,⚠️ Power anomaly detected at cycle 1,intent_wrong_scaling,0.8522481918334961,no
+2025-09-20T15:27:28.060159,⚠️ Vibration anomaly detected at cycle 31,intent_uncertain,0.6210988163948059,yes
+2025-09-20T15:27:28.072707,⚠️ Vibration anomaly detected at cycle 1,intent_uncertain,0.5436733365058899,yes
+2025-09-20T15:27:28.761321,⚠️ Speed anomaly detected at cycle 31,intent_wrong_scaling,0.8108221888542175,no
+2025-09-20T15:27:28.835770,⚠️ Speed anomaly detected at cycle 1,intent_wrong_scaling,0.8629751801490784,no

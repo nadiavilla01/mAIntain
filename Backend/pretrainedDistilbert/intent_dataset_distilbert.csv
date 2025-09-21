@@ -1,0 +1,85 @@
+text,intent
+Sensor Monitoring: potential failure detected - Sensor drift. Cause: Aging or overheating sensor.,intent_sensor_drift
+Potential failure detected: Sensor drift. Cause might be Aging or overheating sensor.,intent_sensor_drift
+Sensor drift caused by Aging or overheating sensor. Effect: Incorrect RUL estimation.,intent_sensor_drift
+Sensor Monitoring — Failure Mode: Sensor drift | Cause: Aging or overheating sensor,intent_sensor_drift
+Sensor drift may occur during Sensor Monitoring. Cause: Aging or overheating sensor. Consequence: Incorrect RUL estimation,intent_sensor_drift
+Sensor Monitoring malfunction due to Sensor drift. Origin: Aging or overheating sensor,intent_sensor_drift
+Incorrect RUL estimation could result from Sensor drift due to Aging or overheating sensor.,intent_sensor_drift
+Collect real-time engine telemetry failed due to Sensor drift. Likely reason: Aging or overheating sensor,intent_sensor_drift
+Sensor drift detected. Likely cause: Aging or overheating sensor. Consequence: Incorrect RUL estimation,intent_sensor_drift
+Wrong scaling detected in data preprocessing stage. Input not normalized as expected.,intent_wrong_scaling
+Data preprocessing error: input normalization mismatch. Potential wrong scaling issue.,intent_wrong_scaling
+Normalization pattern mismatch. Cause: wrong scaling. Risk: model misinterpretation.,intent_wrong_scaling
+Failure Mode: Wrong scaling during Data Preprocessing. Result: input misalignment with model expectations.,intent_wrong_scaling
+Data Preprocessing issue: Wrong scaling applied. Consequence: Incorrect model input representation.,intent_wrong_scaling
+Input scaling anomaly detected during preprocessing. Risk: model misreads input.,intent_wrong_scaling
+Incorrect input normalization due to wrong scaling detected. Impact: model error.,intent_wrong_scaling
+Overestimated RUL detected in inference. Possible unseen failure pattern.,intent_overestimate_rul
+RUL overprediction by LSTM model. Reason: model faced unseen failure scenario.,intent_overestimate_rul
+Inference stage failed: Overestimate RUL. Root cause: Unseen failure pattern.,intent_overestimate_rul
+Late maintenance triggered by RUL overestimate due to model misinterpretation.,intent_overestimate_rul
+Inference anomaly: Predicted RUL is too optimistic. Reason: unseen failure pattern.,intent_overestimate_rul
+RUL estimation error — Inference output is unrealistically high. Suggest checking failure patterns.,intent_overestimate_rul
+Model Integration issue: Outdated checkpoint used. Cause: model not updated.,intent_model_outdated
+Stale predictions due to outdated model version. Check API integration.,intent_model_outdated
+Model Integration error — Prediction inconsistency due to outdated model.,intent_model_outdated
+Outdated model used in inference. Suggest retraining or refreshing checkpoint.,intent_model_outdated
+Version mismatch detected between deployed model and expected pipeline version.,intent_model_outdated
+Prediction drift noticed. Likely cause: outdated model checkpoint.,intent_model_outdated
+Wrong intent classification detected during operator query.,intent_wrong_intent
+Text query misclassified. Possible cause: Similar wording or new phrasing.,intent_wrong_intent
+Action triggered incorrectly due to wrong intent classification.,intent_wrong_intent
+Low confidence detected in intent classification. Suggest human review.,intent_wrong_intent
+Misclassification risk in Operator Query due to phrasing variation.,intent_wrong_intent
+Intent classifier flagged alert. Root cause: unseen phrasing. Action mismatch risk.,intent_wrong_intent
+"Sensor is acting up again — might be drifting.",intent_sensor_drift
+"Sensor values are off, maybe it's overheating?",intent_sensor_drift
+"I think this sensor is aging, data's weird.",intent_sensor_drift
+"Telemetry looks wrong — probably sensor drift.",intent_sensor_drift
+"Another sensor failing? Aging issue again?",intent_sensor_drift
+"Could the sensor be drifting? Temp looks off.",intent_sensor_drift
+"Telemetry inconsistency again from the same sensor.",intent_sensor_drift
+"This sensor might be overheating. Data's strange.",intent_sensor_drift
+"Real-time data is spiking — sensor issue?",intent_sensor_drift
+"Drift in sensor readings detected again.",intent_sensor_drift
+"Input data looks scaled wrong again.",intent_wrong_scaling
+"Something’s off in preprocessing — maybe scaling?",intent_wrong_scaling
+"Model input misaligned due to bad normalization?",intent_wrong_scaling
+"Wrong data scaling? Predictions don't make sense.",intent_wrong_scaling
+"Why is the model misreading the input?",intent_wrong_scaling
+"Normalization pattern mismatch causing issues.",intent_wrong_scaling
+"Preprocessing failed. Bad scaling likely.",intent_wrong_scaling
+"I think we scaled it differently this time.",intent_wrong_scaling
+"Scaling issue detected at preprocessing stage.",intent_wrong_scaling
+"Data was normalized incorrectly again.",intent_wrong_scaling
+"RUL is way too high again.",intent_overestimate_rul
+"This prediction looks optimistic.",intent_overestimate_rul
+"Why is it saying 300h again?",intent_overestimate_rul
+"Another overestimate? RUL’s not realistic.",intent_overestimate_rul
+"Feels like the model’s too confident.",intent_overestimate_rul
+"We’re getting late maintenance again.",intent_overestimate_rul
+"Maintenance came too late — again overestimate.",intent_overestimate_rul
+"Prediction doesn’t match failure pattern.",intent_overestimate_rul
+"RUL too high. Saw this before.",intent_overestimate_rul
+"Model always overpredicts in this scenario.",intent_overestimate_rul
+"Model hasn’t been updated, right?",intent_model_outdated
+"Using an old checkpoint maybe?",intent_model_outdated
+"Predictions feel stale.",intent_model_outdated
+"We forgot to update the model again?",intent_model_outdated
+"I think it’s running the wrong version.",intent_model_outdated
+"Model’s not current — check that?",intent_model_outdated
+"API using old model again?",intent_model_outdated
+"Could this be version mismatch?",intent_model_outdated
+"Outdated checkpoint in use?",intent_model_outdated
+"Inference feels like older model behavior.",intent_model_outdated
+"That's not what I meant.",intent_wrong_intent
+"Model misclassified the input.",intent_wrong_intent
+"Wrong intent triggered again.",intent_wrong_intent
+"Weird. That’s not what I asked for.",intent_wrong_intent
+"Intent detection got confused here.",intent_wrong_intent
+"New phrasing broke intent classification.",intent_wrong_intent
+"It misread the query.",intent_wrong_intent
+"Similar wording confused the model.",intent_wrong_intent
+"Classifier guessed the wrong thing.",intent_wrong_intent
+"Intent logic triggered incorrectly.",intent_wrong_intent

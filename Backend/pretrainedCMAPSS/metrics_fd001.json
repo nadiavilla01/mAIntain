@@ -1,0 +1,76 @@
+{
+  "global": {
+    "rmse": 16.15,
+    "mae": 11.05,
+    "r2": 0.851,
+    "medae": 6.98,
+    "mape_percent": 19.58,
+    "smape_percent": 18.36
+  },
+  "val": {
+    "rmse": 17.98,
+    "mae": 12.62,
+    "r2": 0.815,
+    "medae": 8.34,
+    "mape_percent": 21.43,
+    "smape_percent": 20.47
+  },
+  "val_last_cycle": {
+    "rmse": 3.68,
+    "mae": 3.48,
+    "r2": 0.0,
+    "medae": 3.14,
+    "mape_percent": null,
+    "pct_within_5h": 85.0,
+    "pct_within_10h": 100.0,
+    "last_k": 5,
+    "last_k_rmse": 3.05,
+    "last_k_mae": 2.63
+  },
+  "calibration": {
+    "global": {
+      "enabled": true,
+      "coef": 1.007503394497544,
+      "intercept": 0.9176781072518361
+    },
+    "last_cycle": {
+      "enabled": false,
+      "used": false
+    }
+  },
+  "finetuned": true,
+  "config": {
+    "sequence_length": 30,
+    "max_rul": 125,
+    "sensors": [
+      "s_2",
+      "s_3",
+      "s_4",
+      "s_7",
+      "s_8",
+      "s_9",
+      "s_11",
+      "s_12",
+      "s_13",
+      "s_14",
+      "s_15",
+      "s_17",
+      "s_20",
+      "s_21"
+    ],
+    "smooth_alpha": 0.2,
+    "loss_weight_beta": 1.8,
+    "gamma_top": 0.2,
+    "huber_delta": 0.02,
+    "l2sp_alpha": 2e-05,
+    "lambda_mono": 0.02,
+    "lambda_slope": 0.01,
+    "slope_top_cutoff": 0.9,
+    "head_only_epochs": 1,
+    "scheduler": "CosineAnnealingLR",
+    "grad_clip_norm": 1.0,
+    "amp": false,
+    "mc_dropout_avg_passes": 30,
+    "mc_dropout_last_passes": 20
+  }
+}

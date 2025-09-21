@@ -1,0 +1,86 @@
+.loader-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 1.5s ease-out;
+    overflow: hidden;
+  }
+  
+  .loader-screen.fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .loader-logo {
+    width: 720px;
+    margin-bottom: 20px;
+    animation: logoFadeIn 1s ease-in;
+  }
+  
+  @keyframes logoFadeIn {
+    from {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .loader-subtext {
+    color: #8ab4f8;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in;
+  }
+  
+  .loader-glow-bar {
+    width: 150px;
+    height: 6px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+    box-shadow: 0 0 10px #0ea5e9, 0 0 20px #38bdf8;
+    animation: pulseBar 1.8s infinite ease-in-out;
+  }
+  
+  @keyframes pulseBar {
+    0%, 100% {
+      transform: scaleX(0.3);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+  }
+  
+  
+  .particles-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#0ea5e920 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: floatParticles 10s linear infinite;
+    z-index: 0;
+  }
+  
+  @keyframes floatParticles {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100px 100px;
+    }
+  }
