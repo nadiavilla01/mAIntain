@@ -56,7 +56,7 @@ for unit in features["unit_nr"].unique():
 X_seq = torch.tensor(np.array(X_seq), dtype=torch.float32)
 y_seq = torch.tensor(y_seq, dtype=torch.float32)
 
-print(f"✅ Input shape: {X_seq.shape} | Targets: {y_seq.shape}")
+print(f"Input shape: {X_seq.shape} | Targets: {y_seq.shape}")
 
 
 print("🎯 Running predictions...")

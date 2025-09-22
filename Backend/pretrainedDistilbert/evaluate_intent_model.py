@@ -77,8 +77,8 @@ with torch.no_grad():
         all_labels.extend(labels.cpu().tolist())
 
 
-print("🔍 Classification Report:")
+print(" Classification Report:")
 print(classification_report(all_labels, all_preds, target_names=[id2label[i] for i in sorted(id2label)]))
 
-print("🧩 Confusion Matrix:")
+print(" Confusion Matrix:")
 print(confusion_matrix(all_labels, all_preds))

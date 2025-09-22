@@ -128,5 +128,5 @@ with open(f"{model_path}/label2id.json", "w") as f:
 with open(f"{model_path}/id2label.json", "w") as f:
     json.dump(id2label, f, indent=2)
 
-print(f"\n📈 Training losses: {train_losses}")
-# print(f"🧪 Validation losses: {val_losses}")  # Uncomment if using val loop
+print(f"\n Training losses: {train_losses}")
+# print(f" Validation losses: {val_losses}")  # Uncomment if using val loop

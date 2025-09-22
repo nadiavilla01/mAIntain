@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-# RUL evaluation + optional fine-tuning on FD001 with calibrated predictions and reporting
 import os, sys, json, math, random
 import numpy as np
 import pandas as pd
@@ -9,16 +7,16 @@ import torch.nn as nn
 from sklearn.metrics import r2_score, median_absolute_error, mean_absolute_percentage_error
 from sklearn.linear_model import HuberRegressor
 
-# --- make matplotlib non-interactive to avoid macOS blocking + emoji glyph issues in figures
+
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 from torch.amp import autocast, GradScaler
 
-# ------------------------------------------------------------------------------------------
-# PATHS
-# ------------------------------------------------------------------------------------------
+
+
+
 sys.path.append("../CMAPSS-release")
 CSV_PATH       = "../fd001_normalized_for_pretrained.csv"
 MODEL_PATH     = "../CMAPSS-release/trials/model_FD001.pkl"           # pre-trained object
@@ -30,17 +28,17 @@ PLOT_PATH       = "rul_predictions_plot.png"
 SUMMARY_CSV     = "machines_fd001_summary.csv"
 TOP5_WORST_CSV  = "top5_worst_predictions.csv"
 
-# ------------------------------------------------------------------------------------------
-# DATA / MODEL CONFIG
-# ------------------------------------------------------------------------------------------
+
+
+
 SEQUENCE_LENGTH = 30
 MAX_RUL = 125
 SENSOR_COLS = ['s_2','s_3','s_4','s_7','s_8','s_9','s_11','s_12','s_13','s_14','s_15','s_17','s_20','s_21']
 SMOOTH_ALPHA = 0.2
 
-# ------------------------------------------------------------------------------------------
-# TRAINING / FINETUNE CONFIG
-# ------------------------------------------------------------------------------------------
+
+
+
 FINE_TUNE = True
 EPOCHS = 14
 HEAD_ONLY_EPOCHS = 1
@@ -49,21 +47,21 @@ LR = 1e-4
 WEIGHT_DECAY = 1e-4
 PATIENCE = 4
 
-# --- LOSSES / REGULARISERS
-LOSS_WEIGHT_BETA = 1.8        # increase weight on under-pred near EOL
+
+LOSS_WEIGHT_BETA = 1.8        # increase weighttt
 GAMMA_TOP = 0.20              # small weight at top region
 HUBER_DELTA = 0.02
 L2SP_ALPHA = 2e-5
-LAMBDA_MONO = 0.02            # monotonic hinge coef
-LAMBDA_SLOPE = 0.01           # slope-matching coef
+LAMBDA_MONO = 0.02            # monotonic h
+LAMBDA_SLOPE = 0.01           # slope-matching 
 SLOPE_TOP_CUTOFF = 0.90       # enforce near EOL
 
-# --- STABILITY
-GRAD_CLIP_NORM = 1.0          # <-- FIX: define gradient clipping norm
 
-# ------------------------------------------------------------------------------------------
-# INFERENCE / CALIBRATION
-# ------------------------------------------------------------------------------------------
+GRAD_CLIP_NORM = 1.0          
+
+
+
+
 USE_MC_DROPOUT_AVG = True
 MC_AVG_PASSES = 30
 MC_AVG_BATCH  = 512
@@ -76,9 +74,9 @@ MC_DROPOUT_PASSES_LAST = 20
 
 NUM_WORKERS = 0
 
-# ------------------------------------------------------------------------------------------
-# UTILITIES
-# ------------------------------------------------------------------------------------------
+
+
+
 def set_seed(seed=42):
     random.seed(seed); np.random.seed(seed)
     torch.manual_seed(seed); torch.cuda.manual_seed_all(seed)
@@ -117,7 +115,7 @@ print(f"✅ Input shape: {X_seq.shape} | Targets: {y_seq.shape}")
 units_arr  = np.array([u for u,_ in meta_info])
 cycles_arr = np.array([c for _,c in meta_info])
 
-# previous index within sample space (for monotonic hinge + slope consistency)
+
 prev_idx = np.full(N, -1, dtype=np.int64)
 for u in np.unique(units_arr):
     idxs = np.where(units_arr == u)[0]
@@ -126,7 +124,7 @@ for u in np.unique(units_arr):
         prev_idx[idxs[1:]] = idxs[:-1]
 prev_idx_t = torch.from_numpy(prev_idx)
 
-# unit-wise split to avoid leakage
+
 all_units = features["unit_nr"].unique()
 rng = np.random.default_rng(7); rng.shuffle(all_units)
 split = int(len(all_units) * 0.8)
@@ -165,7 +163,7 @@ def enable_mc_dropout(m: nn.Module):
     for mod in m.modules():
         name = mod.__class__.__name__.lower()
         if isinstance(mod, nn.Dropout) or "dropout" in name:
-            mod.train()  # keep dropout active for stochastic forward passes
+            mod.train()  # keep dropout active !!
 
 def mc_avg_predict(model, X_tensor, passes=30, batch_size=512):
     model.eval(); enable_mc_dropout(model)
@@ -185,9 +183,9 @@ def mc_avg_predict(model, X_tensor, passes=30, batch_size=512):
     avg = sum_pred / passes
     return np.clip(avg, 0.0, 1.0).astype(np.float32)
 
-# ------------------------------------------------------------------------------------------
-# OPTIONAL FINE-TUNING
-# ------------------------------------------------------------------------------------------
+
+
+
 if FINE_TUNE:
     print("🛠️ Fine-tuning… (head warm-up → unfreeze, Huber + β(1-y)+γy, L2-SP, mono hinge + slope-match, cosine LR, AMP, grad clip, early stop on VAL-LAST MAE)")
     opt = torch.optim.AdamW(model.parameters(), lr=LR, weight_decay=WEIGHT_DECAY)
@@ -221,7 +219,6 @@ if FINE_TUNE:
                 yhat, *_ = model(xb)
                 yhat = yhat.squeeze()
 
-                # robust, asymmetric loss
                 res  = yhat - yb
                 w    = 1.0 + beta_now * (1.0 - yb) + GAMMA_TOP * yb
                 mse_robust = huber(res, HUBER_DELTA)
@@ -264,7 +261,7 @@ if FINE_TUNE:
 
             scaler.scale(loss).backward()
             scaler.unscale_(opt)
-            nn.utils.clip_grad_norm_(model.parameters(), GRAD_CLIP_NORM)   # <-- FIX
+            nn.utils.clip_grad_norm_(model.parameters(), GRAD_CLIP_NORM)   
             scaler.step(opt); scaler.update()
 
             tr_loss += loss.item() * xb.size(0); nobs += xb.size(0)
@@ -308,9 +305,9 @@ if FINE_TUNE:
     print(f"💾 Saved fine-tuned model → {FINETUNED_PATH}")
     model.to(device)
 
-# ------------------------------------------------------------------------------------------
-# INFERENCE (MC-DROPOUT AVERAGING)
-# ------------------------------------------------------------------------------------------
+
+
+
 print("🎯 Running predictions…")
 model.eval()
 if USE_MC_DROPOUT_AVG:
@@ -324,9 +321,9 @@ else:
     y_pred = y_pred.squeeze().detach().cpu()
 y_pred = torch.clamp(y_pred, 0.0, 1.0)
 
-# ------------------------------------------------------------------------------------------
-# CALIBRATION
-# ------------------------------------------------------------------------------------------
+
+
+
 y_true_np_raw = (y_seq.numpy() * MAX_RUL)
 y_pred_np_raw = (y_pred.numpy() * MAX_RUL)
 
@@ -386,9 +383,9 @@ if CALIBRATE_LAST:
     except Exception as e:
         print(f"   └─ Last-cycle calibration skipped: {e}")
 
-# ------------------------------------------------------------------------------------------
-# METRICS
-# ------------------------------------------------------------------------------------------
+
+
+
 y_true_np = pred_df["true_RUL_raw"].to_numpy()
 y_pred_np = pred_df["predicted_RUL"].to_numpy()
 pred_df["abs_error"] = np.abs(pred_df["true_RUL_raw"] - pred_df["predicted_RUL"])
@@ -417,17 +414,17 @@ metrics_global = compute_metrics_on_indices(np.arange(len(y_true_np)), "GLOBAL")
 print("📊 Evaluation Metrics (VAL split only):")
 metrics_val = compute_metrics_on_indices(val_idx, "VAL")
 
-# ------------------------------------------------------------------------------------------
-# ARTIFACTS
-# ------------------------------------------------------------------------------------------
-# predictions (per sample)
+
+
+
+
 pred_df_out = pred_df.rename(columns={"true_RUL_raw":"true_RUL"})[
     ["unit_nr","time_cycles","true_RUL","predicted_RUL","abs_error"]
 ]
 pred_df_out.to_csv(PREDICTIONS_CSV, index=False)
 print(f"💾 Predictions → {PREDICTIONS_CSV}")
 
-# last-cycle metrics on VAL units + last-k tail
+
 val_mask_units = np.isin(pred_df["unit_nr"].values, list(val_units))
 val_df_all = pred_df[val_mask_units].copy()
 last_idx_val = val_df_all.groupby('unit_nr')['time_cycles'].idxmax()
@@ -453,13 +450,13 @@ rmse_last5 = float(np.sqrt(np.mean((yp5 - yt5)**2)))
 mae_last5  = float(np.mean(np.abs(yp5 - yt5)))
 print(f"[VAL-LAST@{k}] RMSE {rmse_last5:.2f} | MAE {mae_last5:.2f}")
 
-# worst-5 units (on last-cycle)
+
 worst = (val_df_all.loc[last_idx_val]
          .assign(last_abs_error=lambda d: np.abs(d["true_RUL_raw"] - d["predicted_RUL"]))
          .sort_values("last_abs_error", ascending=False).head(5))
 worst.to_csv(TOP5_WORST_CSV, index=False)
 
-# quick plot (headless save only; no show)
+
 plt.figure(figsize=(10,5))
 plt.plot(y_true_np[:300], label="True RUL", alpha=0.8)
 plt.plot(y_pred_np[:300], label="Predicted RUL", alpha=0.8)
@@ -470,9 +467,9 @@ plt.savefig(PLOT_PATH, dpi=120)
 plt.close()
 print(f"🖼️ Plot → {PLOT_PATH}")
 
-# ------------------------------------------------------------------------------------------
-# MONOTONIC SMOOTHING + PER-UNIT SUMMARY
-# ------------------------------------------------------------------------------------------
+
+
+
 def enforce_nonincreasing(arr: np.ndarray) -> np.ndarray:
     return np.minimum.accumulate(arr[::-1])[::-1]
 
@@ -537,9 +534,9 @@ summary.to_csv(SUMMARY_CSV, index=False)
 print(f"💾 Per-unit summary → {SUMMARY_CSV}")
 print(f"💾 Worst-5 (VAL last-cycle) → {TOP5_WORST_CSV}")
 
-# ------------------------------------------------------------------------------------------
-# METRICS JSON
-# ------------------------------------------------------------------------------------------
+
+
+
 metrics_json = {
     "global": metrics_global,
     "val": metrics_val,
@@ -591,4 +588,4 @@ metrics_json = {
 }
 with open(METRICS_JSON, "w") as f:
     json.dump(metrics_json, f, indent=2)
-print(f"📊 Metrics → {METRICS_JSON}")
+print(f"Metrics → {METRICS_JSON}")
