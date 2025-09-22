@@ -21,3 +21,7 @@ __pycache__/
 
 /Backend/.env.*
 !/Backend/.env.example
+
+# Models (ignored)
+Backend/pretrainedResNet/*.pth
+Backend/pretrainedDistilbert/distilbert_intent_model/
