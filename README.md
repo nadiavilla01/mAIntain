@@ -1,4 +1,5 @@
-To run everything in the backend:
+To run everything you need to retrain the models
+ in the backend:
 start for each pre trained model:
 run the training algorithms to generate folders and pth since git doesn't let me push the models.
 them in the backend folder run: uvicorn main:app --reload
