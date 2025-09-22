@@ -1,4 +1,4 @@
-To run everything you need to retrain the models
+To run everything you need to retrain the models specially the distilbert and the resnet, resnet is heavier becasue it uses 1800 images to fine tune.
  in the backend:
 start for each pre trained model:
 run the training algorithms to generate folders and pth since git doesn't let me push the models.
