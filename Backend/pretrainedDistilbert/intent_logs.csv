@@ -727,3 +727,12 @@ timestamp,text,predicted_intent,confidence,fallback
 2025-09-20T15:27:28.072707,⚠️ Vibration anomaly detected at cycle 1,intent_uncertain,0.5436733365058899,yes
 2025-09-20T15:27:28.761321,⚠️ Speed anomaly detected at cycle 31,intent_wrong_scaling,0.8108221888542175,no
 2025-09-20T15:27:28.835770,⚠️ Speed anomaly detected at cycle 1,intent_wrong_scaling,0.8629751801490784,no
+2025-09-22T10:21:33.616982,⚠️ Temperature anomaly detected at cycle 31,intent_uncertain,0.5829970240592957,yes
+2025-09-22T10:21:33.664344,⚠️ Power anomaly detected at cycle 31,intent_uncertain,0.7027744054794312,yes
+2025-09-22T10:21:33.701320,⚠️ Vibration anomaly detected at cycle 31,intent_uncertain,0.5520886778831482,yes
+2025-09-22T10:21:33.822792,⚠️ Speed anomaly detected at cycle 31,intent_uncertain,0.5467109680175781,yes
+2025-09-22T10:21:45.237730,⚠️ Temperature anomaly detected at cycle 1,intent_uncertain,0.4447566270828247,yes
+2025-09-22T10:21:45.277632,⚠️ Power anomaly detected at cycle 1,intent_uncertain,0.6081845164299011,yes
+2025-09-22T10:21:45.325933,⚠️ Vibration anomaly detected at cycle 1,intent_uncertain,0.4846183657646179,yes
+2025-09-22T10:21:45.502937,⚠️ Speed anomaly detected at cycle 1,intent_uncertain,0.4031294286251068,yes
+2025-09-22T10:21:59.852172,Why was this alert raised?,intent_overestimate_rul,0.8799306750297546,no

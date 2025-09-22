@@ -6,12 +6,12 @@ import os
 import math
 import numpy as np
 
-from intent_utils import infer_intent  # DistilBERT intent
+from pretrainedDistilbert.intent_utils import infer_intent  # DistilBERT intent
 
 router = APIRouter()
 
 
-FMEA_PATH = "./FMEA.csv"
+FMEA_PATH = "../pretrainedDistilbert/FMEA.csv"
 FMEA_COLS = ["intent", "cause", "suggested_action"]
 if os.path.exists(FMEA_PATH):
     _fmea = pd.read_csv(FMEA_PATH)

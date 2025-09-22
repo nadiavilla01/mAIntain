@@ -9,7 +9,7 @@ import os
 import re
 
 from utils.data_loader import load_base_data, status_from_pred
-from intent_utils import infer_intent
+from pretrainedDistilbert.intent_utils import infer_intent
 
 
 SENSORS = ['s_2','s_3','s_4','s_7','s_8','s_9','s_11','s_12','s_13','s_14','s_15','s_17','s_20','s_21']

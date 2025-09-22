@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(__file__)
 STATIC_DIR = os.path.join(BASE_DIR, "static")
 os.makedirs(STATIC_DIR, exist_ok=True)
 
-MODEL_PATH = os.path.join(BASE_DIR, "../../fault_classifier_resnet18.pth")
+MODEL_PATH = os.path.join(BASE_DIR, "../pretrainedResNet/fault_classifier_resnet18.pth")
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 LABELS = ['crack', 'dataset_sample', 'heat', 'mixed_faults', 'no_fault', 'rust', 'wear']
 

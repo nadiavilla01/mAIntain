@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Query
 from utils.data_loader import load_base_data, status_from_pred
-from intent_utils import infer_intent
+from pretrainedDistilbert.intent_utils import infer_intent
 from datetime import datetime
 import numpy as np
 import pandas as pd
@@ -23,7 +23,7 @@ ZSCORE_WINDOW = 10
 MIN_Z_FOR_NOTE = 2.0           
 
 
-FMEA_PATH = "./FMEA.csv"
+FMEA_PATH = "../pretrainedDistilbert/FMEA.csv"
 if os.path.exists(FMEA_PATH):
     fmea_df = pd.read_csv(FMEA_PATH)
 else:
@@ -53,7 +53,7 @@ def classify_alert(text: str, severity: float = 1.0):
             with open("intent_fallback_log.csv", "a") as log_file:
                 log_file.write(f"{intent},{confidence:.2f},{text}\n")
         except Exception as e:
-            print(f"⚠️ Could not log fallback intent: {e}")
+            print(f"Could not log fallback intent: {e}")
 
     return {
         "text": text,
