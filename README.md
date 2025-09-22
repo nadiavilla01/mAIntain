@@ -58,6 +58,7 @@ i am going to attach proof of the git error
 <img width="1440" height="900" alt="Screenshot 2025-09-22 at 00 41 15" src="https://github.com/user-attachments/assets/86099201-52c3-4398-8a41-12774e0e31bb" />
 
 
+<img width="1440" height="900" alt="Screenshot 2025-09-22 at 00 41 17" src="https://github.com/user-attachments/assets/ddf51462-4ea5-4404-94f4-00b5b4e2c050" />
 
 
 
