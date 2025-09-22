@@ -47,15 +47,20 @@ found 0 vulnerabilities
 
 
 
+now you must ask yourself where are the previous commit...since i always committed to local and when it came to push everything to the repo i made for the project it was impossible, kept figuring out for 2 hours end even when i fixed the problem the issue continue to pop up.
+in the end i decided to eliminte all the commits becasue they were giving me issues and push the only commit it remained aka the last changes.
+I hope this won't get penalized becasue its a pity and honestly since everything in the istructions was so strict , it could've been useful to have more guidance on git, and how git repo would have been evaluated.
+i am going to attach proof of the git error 
+
+
+
+
+<img width="1440" height="900" alt="Screenshot 2025-09-22 at 00 41 15" src="https://github.com/user-attachments/assets/86099201-52c3-4398-8a41-12774e0e31bb" />
 
 
 
 
 
+<img width="1440" height="900" alt="Screenshot 2025-09-22 at 00 41 16" src="https://github.com/user-attachments/assets/48301d93-ae57-4a40-a188-99862dbd54ec" />
 
-
-
-
-
-
-
+it was jsut 2 hours like this :)
